@@ -206,9 +206,9 @@ footer{text-align:center;margin-top:20px;padding:.8rem;color:#3a5a7a;font-size:.
   <div class="hdr">
     <div class="logo-a">
       <img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo 3D Seduc">
-      <div class="logo-t">Álbum da Copa da Formação<small>URE CAIEIRAS — Seduc SP</small></div>
+      <div class="logo-t">Álbum da Copa do REPLANEJAMENTO<small>URE CAIEIRAS — Seduc SP</small></div>
     </div>
-    <div class="tb"><span class="d"></span>68 Escolas</div>
+    <div class="tb"><span class="d"></span>67 Escolas & URE</div>
   </div>
   <nav class="pn" id="pNav"></nav>
   <div class="cb">
@@ -220,7 +220,7 @@ footer{text-align:center;margin-top:20px;padding:.8rem;color:#3a5a7a;font-size:.
     <div class="cm" id="cm"></div>
   </div>
   <div class="op">
-    <span class="pl2">Reveladas: <b id="oc">0</b> / <b id="ot">68</b></span>
+    <span class="pl2">Reveladas: <b id="oc">0</b> / <b id="ot">67 Escolas & URE</b></span>
     <div class="pt"><div class="pf" id="of"></div></div>
     <span class="pp" id="op">0%</span>
   </div>
@@ -231,7 +231,7 @@ footer{text-align:center;margin-top:20px;padding:.8rem;color:#3a5a7a;font-size:.
   <div class="admin-zone" id="adminZone">
     <div class="admin-gate" id="adminGate">
       <div class="admin-gate-icon">🔐</div>
-      <div class="admin-gate-text">Painel do Formador</div>
+      <div class="admin-gate-text">Painel do REPLANEJAMENTO</div>
       <div class="admin-pw-row" id="adminPwRow">
         <input type="password" class="admin-pw" id="adminPw" placeholder="Senha" maxlength="20">
         <button class="admin-pw-btn" id="adminPwBtn">Acessar</button>
@@ -241,4 +241,312 @@ footer{text-align:center;margin-top:20px;padding:.8rem;color:#3a5a7a;font-size:.
     <div class="codes-area" id="codesArea"></div>
   </div>
 
-  <footer>Copa da Formação Multiplic
+  <footer>Copa REPLANEJAMNTO &bull; URE Caieiras &bull; Seduc SP &bull; 67 Escolas & URE</footer>
+</div>
+<div class="modal-overlay" id="modal"><div class="modal" id="modalInner"></div></div>
+<div class="cbox" id="cbox"></div>
+
+<script>
+/* ============================================================
+   CRIPTOGRAFIA + UTILITÁRIOS
+   ============================================================ */
+const _v1=0x3C,_v2=0x1E;
+function _D(h){const k=_v1+_v2;let r='';for(let i=0;i<h.length;i+=2)r+=String.fromCharCode(parseInt(h.substr(i,2),16)^k);return r}
+function _F(v){return v==null?'—':(typeof v==='number'?v.toFixed(1).replace('.',','):v)}
+function _FP(v){return v==null?'—':v.toFixed(1).replace('.',',')+'%'}
+function _barP(v,min,max){return Math.max(0,Math.min(100,((v-min)/(max-min))*100))}
+function _barC(v,min,max){const p=(v-min)/(max-min);if(p>=.75)return'#4ade80';if(p>=.5)return'#fbbf24';if(p>=.25)return'#fb923c';return'#f87171'}
+function _barCE(v){if(v==null)return'#64748b';if(v>=0)return'#4ade80';if(v>=-5)return'#fbbf24';return'#f87171'}
+function starSVG(){return'<svg viewBox="0 0 16 16"><path d="M8 0l2.2 5.3L16 6.1l-4 3.8L13 16 8 13.2 3 16l1-6.1L0 6.1l5.8-.8z"/></svg>'}
+function starsN(n){return Array(n).fill(0).map(()=>starSVG()).join('')}
+
+/* ============================================================
+   SENHA DO ADMINISTRADOR
+   Troque 'REPLANEJAMENTO2026' pela senha desejada
+   Para alterar: mude o valor abaixo
+   ============================================================ */
+const _ADMIN_PW = 'REPLANEJAMENTO2026';
+
+/* ============================================================
+   DADOS — 68 ESCOLAS
+   ============================================================ */
+const G=[
+{id:'A',nm:'Grupo A',sub:'Américas do Sul',ic:'🌎',col:'#009c3b',items:[
+{id:1,co:'Brasil',f:'🇧🇷',c1:'#009c3b',c2:'#ffdf00',_c:'1c1f1d666667',fn:'ALFRIED THEODOR WEISZFLOG',cd:'923138',ap:93.7,pp:93.8,pl:8.1,apo:3,sr:5.0,eq:-3.8,aj:.513,nt:8.6,qe:0},
+{id:2,co:'Argentina',f:'🇦🇷',c1:'#74acdf',c2:'#ffffff',_c:'1c1f1d666664',fn:'PEDRO GALRAO DO NASCIMENTO',cd:'5721',ap:91.0,pp:86.3,pl:7.2,apo:3,sr:5.8,eq:-13.4,aj:.497,nt:8.4,qe:0},
+{id:3,co:'Colômbia',f:'🇨🇴',c1:'#fcd116',c2:'#003893',_c:'1c1f1d666665',fn:'ALBINO FIORE',cd:'904351',ap:92.7,pp:86.6,pl:5.9,apo:3,sr:6.5,eq:6.2,aj:.345,nt:8.3,qe:0},
+{id:4,co:'Uruguai',f:'🇺🇾',c1:'#0038a8',c2:'#ffffff',_c:'1c1f1d66666a',fn:'ARMANDO SESTINI',cd:'908381',ap:89.2,pp:96.0,pl:5.9,apo:5.4,sr:5.6,eq:-4.6,aj:.523,nt:8.2,qe:0},
+{id:5,co:'Chile',f:'🇨🇱',c1:'#d52b1e',c2:'#0039a6',_c:'1c1f1d66666b',fn:'ADAIL JARBAS DUCLOS',cd:'48823',ap:93.4,pp:96.7,pl:7.7,apo:3,sr:4.4,eq:-3.7,aj:.498,nt:8.1,qe:0},
+{id:6,co:'Paraguai',f:'🇵🇾',c1:'#d52b1e',c2:'#0038a8',_c:'1c1f1d66666c',fn:'OTTO WEISZFLOG',cd:'5629',ap:85.8,pp:88.5,pl:7.0,apo:3.17,sr:4.2,eq:-8.6,aj:.677,nt:7.9,qe:0},
+{id:7,co:'Peru',f:'🇵🇪',c1:'#d91023',c2:'#ffffff',_c:'1c1f1d66666d',fn:'ISAIAS LUIZ MATIAZZO',cd:'5587',ap:94.1,pp:81.9,pl:7.1,apo:3,sr:5.4,eq:-5.3,aj:.399,nt:7.8,qe:0},
+{id:8,co:'Equador',f:'🇪🇨',c1:'#ffdd00',c2:'#0039a6',_c:'1c1f1d666662',fn:'WALTHER WEISZFLOG',cd:'5630',ap:90.1,pp:99.3,pl:8.8,apo:3.67,sr:4.2,eq:null,aj:.360,nt:7.8,qe:0},
+{id:9,co:'Bolívia',f:'🇧🇴',c1:'#d52b1e',c2:'#f9e300',_c:'1c1f1d666663',fn:'JOSE ROBERTO MELCHIOR DR',cd:'902378',ap:79.2,pp:94.2,pl:7.6,apo:3.2,sr:4.6,eq:-17.1,aj:.614,nt:7.7,qe:0}
+]},
+{id:'B',nm:'Grupo B',sub:'Américas Norte/Central',ic:'🗽',col:'#006847',items:[
+{id:10,co:'México',f:'🇲🇽',c1:'#006847',c2:'#ce1126',_c:'1c1f1d666766',fn:'IRACI SARTORI VIEIRA DA SILVA PROFA',cd:'5769',ap:85.8,pp:93.3,pl:6.6,apo:3.17,sr:4.5,eq:-13.7,aj:.531,nt:7.5,qe:0},
+{id:11,co:'EUA',f:'🇺🇸',c1:'#3c3b6e',c2:'#b31942',_c:'1c1f1d666767',fn:'ODARICO OLIVEIRA NASCIMENTO PROF',cd:'5733',ap:85.6,pp:86.6,pl:8.7,apo:3,sr:4.2,eq:-8.3,aj:.719,nt:7.5,qe:0},
+{id:12,co:'Canadá',f:'🇨🇦',c1:'#d52b1e',c2:'#ffffff',_c:'1c1f1d666764',fn:'NIDE ZAIM CARDOSO PROFA',cd:'5642',ap:79.7,pp:93.0,pl:6.8,apo:3.4,sr:4.0,eq:-15.2,aj:.742,nt:7.3,qe:0},
+{id:13,co:'Costa Rica',f:'🇨🇷',c1:'#002b7f',c2:'#ce1126',_c:'1c1f1d666765',fn:'LENITA CORREA CAMARGO PROFA',cd:'916869',ap:91.0,pp:89.5,pl:8.0,apo:3.33,sr:4.6,eq:-0.6,aj:.600,nt:7.2,qe:0},
+{id:14,co:'Panamá',f:'🇵🇦',c1:'#d52b1e',c2:'#0039a6',_c:'1c1f1d66676a',fn:'ULYSSES SANCHES RAMIRES PROF',cd:'48781',ap:87.3,pp:85.2,pl:7.4,apo:3,sr:3.9,eq:-8.2,aj:.813,nt:7.2,qe:0},
+{id:15,co:'Jamaica',f:'🇯🇲',c1:'#009b3a',c2:'#fed100',_c:'1c1f1d66676b',fn:'ALADINO POLON',cd:'921002',ap:87.4,pp:97.0,pl:8.3,apo:6,sr:4.5,eq:11.3,aj:.460,nt:7.1,qe:0},
+{id:16,co:'Honduras',f:'🇭🇳',c1:'#0039a6',c2:'#0073cf',_c:'1c1f1d66676c',fn:'DR. MARIO TOLEDO DE MORAES',cd:'901805',ap:83.5,pp:79.8,pl:5.4,apo:3.5,sr:4.6,eq:-7.2,aj:.768,nt:7.1,qe:0},
+{id:17,co:'Venezuela',f:'🇻🇪',c1:'#ffcc00',c2:'#0039a6',_c:'1c1f1d66676d',fn:'ELCIO JOSE PEREIRA COTRIM PROF',cd:'902330',ap:92.5,pp:86.8,pl:8.3,apo:3,sr:2.9,eq:null,aj:.647,nt:7.1,qe:0}
+]},
+{id:'C',nm:'Grupo C',sub:'Europa I',ic:'🏰',col:'#002395',items:[
+{id:18,co:'França',f:'🇫🇷',c1:'#002395',c2:'#ef4135',_c:'1c1f1d666762',fn:'CARLOS AUGUSTO DE PADUA FLEURY PROF',cd:'908423',ap:78.4,pp:90.7,pl:6.7,apo:3,sr:4.5,eq:-19.0,aj:.494,nt:7.0,qe:0},
+{id:19,co:'Alemanha',f:'🇩🇪',c1:'#000000',c2:'#dd0000',_c:'1c1f1d666763',fn:'ARTHUR WEINGRILL',cd:'41075',ap:76.3,pp:96.4,pl:6.6,apo:3.33,sr:6.3,eq:-2.7,aj:.424,nt:7.0,qe:0},
+{id:20,co:'Inglaterra',f:'🏴',c1:'#cf081f',c2:'#ffffff',_c:'1c1f1d666466',fn:'ANA MARIA GARRIDO ORLANDIN PROFA',cd:'38337',ap:89.4,pp:87.5,pl:6.0,apo:3,sr:3.0,eq:null,aj:.858,nt:6.9,qe:0},
+{id:21,co:'Espanha',f:'🇪🇸',c1:'#c60b1e',c2:'#ffc400',_c:'1c1f1d666467',fn:'JOAQUIM MARQUES DA SILVA SOBRINHO TTE',cd:'5551',ap:86.1,pp:92.3,pl:9.2,apo:2.67,sr:3.5,eq:null,aj:.501,nt:6.8,qe:0},
+{id:22,co:'Itália',f:'🇮🇹',c1:'#009246',c2:'#ce2b37',_c:'1c1f1d666464',fn:'AZEVEDO SOARES',cd:'5666',ap:88.9,pp:93.4,pl:6.7,apo:3,sr:4.0,eq:1.6,aj:.528,nt:6.7,qe:0},
+{id:23,co:'Portugal',f:'🇵🇹',c1:'#006600',c2:'#ff0000',_c:'1c1f1d666465',fn:'SUZANA DIAS',cd:'5538',ap:94.9,pp:80.7,pl:6.2,apo:3.25,sr:3.0,eq:null,aj:.872,nt:6.7,qe:0},
+{id:24,co:'Holanda',f:'🇳🇱',c1:'#ff6600',c2:'#0039a6',_c:'1c1f1d66646a',fn:'LUIZ ALEXANDRE DOS SANTOS VEREADOR',cd:'921038',ap:79.8,pp:81.9,pl:6.6,apo:3.2,sr:3.7,eq:-15.3,aj:.810,nt:6.7,qe:0},
+{id:25,co:'Bélgica',f:'🇧🇪',c1:'#000000',c2:'#fae042',_c:'1c1f1d66646b',fn:'KATIA MARIA TARIFA LEME TONELLI PROFA',cd:'50428',ap:89.1,pp:74.8,pl:6.7,apo:3,sr:3.9,eq:-0.4,aj:.868,nt:6.7,qe:0}
+]},
+{id:'D',nm:'Grupo D',sub:'Europa II',ic:'⚽',col:'#c8102e',items:[
+{id:26,co:'Croácia',f:'🇭🇷',c1:'#ff0000',c2:'#171796',_c:'1c1f1d66646c',fn:'FRANCISCO GONCALVES VIEIRA PROF',cd:'5605',ap:90.5,pp:90.1,pl:6.2,apo:3,sr:4.3,eq:5.5,aj:.501,nt:6.6,qe:0},
+{id:27,co:'Sérvia',f:'🇷🇸',c1:'#c6363c',c2:'#0c4076',_c:'1c1f1d66646d',fn:'PEDRO LELIS DE SOUZA PREFEITO',cd:'406806',ap:83.0,pp:64.4,pl:4.9,apo:3,sr:3.8,eq:-19.3,aj:.619,nt:6.6,qe:0},
+{id:28,co:'Polônia',f:'🇵🇱',c1:'#dc143c',c2:'#ffffff',_c:'1c1f1d666462',fn:'ELVIRA PARADA MANGA PROFA',cd:'48811',ap:81.8,pp:85.4,pl:7.4,apo:3.17,sr:4.1,eq:-4.4,aj:.807,nt:6.6,qe:0},
+{id:29,co:'Suíça',f:'🇨🇭',c1:'#ff0000',c2:'#ffffff',_c:'1c1f1d666463',fn:'HERMELINA DE ALBUQUERQUE PASSARELLA PROFA',cd:'5685',ap:83.4,pp:86.6,pl:6.0,apo:2.6,sr:3.5,eq:-11.4,aj:.822,nt:6.6,qe:0},
+{id:30,co:'Dinamarca',f:'🇩🇰',c1:'#c60c30',c2:'#ffffff',_c:'1c1f1d666566',fn:'DOMINGOS CAMBIAGHI PROF',cd:'5708',ap:85.5,pp:94.4,pl:5.5,apo:2.8,sr:5.2,eq:-3.4,aj:.406,nt:6.5,qe:0},
+{id:31,co:'Suécia',f:'🇸🇪',c1:'#004b87',c2:'#fecc02',_c:'1c1f1d666567',fn:'MARIA ZEZA GOMES DE OLIVEIRA',cd:'902385',ap:79.6,pp:76.9,pl:8.1,apo:3,sr:4.3,eq:-4.3,aj:.715,nt:6.4,qe:0},
+{id:32,co:'Noruega',f:'🇳🇴',c1:'#ba0c2f',c2:'#00205b',_c:'1c1f1d666564',fn:'CELESTINA VALENTE LENGENFELDER PROFA',cd:'5770',ap:85.8,pp:87.0,pl:8.2,apo:3.6,sr:4.8,eq:-0.5,aj:.421,nt:6.4,qe:0},
+{id:33,co:'Tchéquia',f:'🇨🇿',c1:'#d7141a',c2:'#11457e',_c:'1c1f1d666565',fn:'BAIRRO DO ITAIM',cd:'902366',ap:81.2,pp:91.4,pl:6.6,apo:2.67,sr:4.3,eq:7.0,aj:.685,nt:6.3,qe:0},
+{id:34,co:'Áustria',f:'🇦🇹',c1:'#ed2939',c2:'#ffffff',_c:'1c1f1d66656a',fn:'BENEDITO FAGUNDES MARQUES',cd:'5712',ap:82.5,pp:87.6,pl:7.4,apo:3,sr:3.3,eq:null,aj:.544,nt:6.1,qe:0}
+]},
+{id:'E',nm:'Grupo E',sub:'Europa III',ic:'🏔️',col:'#ff6600',items:[
+{id:35,co:'Turquia',f:'🇹🇷',c1:'#e30a17',c2:'#ffffff',_c:'1c1f1d66656b',fn:'APARECIDO ROBERTO TONELLOTTI PROFESSOR',cd:'923631',ap:83.9,pp:86.6,pl:5.1,apo:3.2,sr:3.7,eq:-1.7,aj:.828,nt:6.1,qe:0},
+{id:36,co:'Rússia',f:'🇷🇺',c1:'#0039a6',c2:'#d52b1e',_c:'1c1f1d66656c',fn:'WALTER RIBAS DE ANDRADE PROF EE',cd:'5548',ap:91.2,pp:94.6,pl:3.9,apo:1.67,sr:3.4,eq:null,aj:.618,nt:6.0,qe:0},
+{id:37,co:'Ucrânia',f:'🇺🇦',c1:'#005bbb',c2:'#ffd500',_c:'1c1f1d66656d',fn:'PEDRO PAULO DE AGUIAR',cd:'921026',ap:80.3,pp:88.3,pl:7.6,apo:2.13,sr:3.6,eq:-3.0,aj:.877,nt:6.0,qe:0},
+{id:38,co:'País de Gales',f:'🏴',c1:'#00ab39',c2:'#ffffff',_c:'1c1f1d666562',fn:'PAULO DUARTE',cd:'902676',ap:84.5,pp:93.5,pl:5.5,apo:2.6,sr:3.5,eq:-0.3,aj:.779,nt:5.8,qe:0},
+{id:39,co:'Escócia',f:'🏴',c1:'#003078',c2:'#ffffff',_c:'1c1f1d666563',fn:'ALBERTO GRAF CAPITAO',cd:'5575',ap:80.3,pp:75.0,pl:6.6,apo:3,sr:3.7,eq:-4.2,aj:.765,nt:5.8,qe:0},
+{id:40,co:'Irlanda',f:'🇮🇪',c1:'#009a49',c2:'#ffffff',_c:'1c1f1d666a66',fn:'BUENO DE AZEVEDO FILHO PROF',cd:'915233',ap:83.3,pp:85.8,pl:4.2,apo:3.71,sr:3.9,eq:2.8,aj:.824,nt:5.7,qe:0},
+{id:41,co:'Islândia',f:'🇮🇸',c1:'#003897',c2:'#d72828',_c:'1c1f1d666a67',fn:'VINCENZO LOBASSI',cd:'44957',ap:80.3,pp:91.3,pl:4.0,apo:3.67,sr:3.7,eq:8.7,aj:.773,nt:5.7,qe:0},
+{id:42,co:'Finlândia',f:'🇫🇮',c1:'#003580',c2:'#ffffff',_c:'1c1f1d666a64',fn:'JARDIM SAO FRANCISCO',cd:'913455',ap:83.6,pp:82.3,pl:6.4,apo:2,sr:4.7,eq:2.1,aj:.699,nt:5.6,qe:0},
+{id:43,co:'Grécia',f:'🇬🇷',c1:'#0d5eaf',c2:'#ffffff',_c:'1c1f1d666a65',fn:'JOSE DE BARROS MARTINS EDITOR',cd:'913443',ap:82.3,pp:90.4,pl:4.6,apo:3,sr:3.5,eq:-1.5,aj:.886,nt:5.6,qe:0}
+]},
+{id:'F',nm:'Grupo F',sub:'África',ic:'🌍',col:'#d4a017',items:[
+{id:44,co:'Marrocos',f:'🇲🇦',c1:'#c1272d',c2:'#006233',_c:'1c1f1d666a6a',fn:'PIETRO PETRI',cd:'5745',ap:81.9,pp:81.3,pl:6.7,apo:0.6,sr:3.5,eq:-11.5,aj:.840,nt:5.6,qe:0},
+{id:45,co:'Senegal',f:'🇸🇳',c1:'#00853f',c2:'#fdef42',_c:'1c1f1d666a6b',fn:'IVONE DOS ANJOS DA SILVA CAMPOS PROFA',cd:'269396',ap:81.5,pp:90.5,pl:5.8,apo:2,sr:4.4,eq:-3.1,aj:.590,nt:5.5,qe:0},
+{id:46,co:'Camarões',f:'🇨🇲',c1:'#007a5e',c2:'#ce1126',_c:'1c1f1d666a6c',fn:'ZILTON BICUDO PROF',cd:'925482',ap:76.4,pp:87.2,pl:5.6,apo:3,sr:3.7,eq:1.6,aj:.893,nt:5.5,qe:0},
+{id:47,co:'Nigéria',f:'🇳🇬',c1:'#008751',c2:'#ffffff',_c:'1c1f1d666a6d',fn:'JARDIM SILVIA II',cd:'924532',ap:79.7,pp:86.4,pl:7.2,apo:3.5,sr:3.5,eq:2.3,aj:.877,nt:5.5,qe:0},
+{id:48,co:'Gana',f:'🇬🇭',c1:'#006b3f',c2:'#fcd116',_c:'1c1f1d666a62',fn:'JOCIMARA VIEIRA DA SILVA PROFA',cd:'923643',ap:76.6,pp:87.5,pl:4.1,apo:3.33,sr:3.6,eq:-3.1,aj:.832,nt:5.4,qe:0},
+{id:49,co:'Tunísia',f:'🇹🇳',c1:'#e70013',c2:'#ffffff',_c:'1c1f1d666a63',fn:'OZILDE ALBUQUERQUE PASSARELLA DR',cd:'39445',ap:86.7,pp:84.8,pl:5.1,apo:1.25,sr:3.8,eq:0.0,aj:.739,nt:5.4,qe:5.7},
+{id:50,co:'Egito',f:'🇪🇬',c1:'#ce1126',c2:'#ffffff',_c:'1c1f1d666b66',fn:'OLINDO DARTORA DR',cd:'5599',ap:86.9,pp:95.8,pl:7.3,apo:3,sr:4.3,eq:26.7,aj:.451,nt:5.3,qe:0},
+{id:51,co:'África do Sul',f:'🇿🇦',c1:'#007749',c2:'#ffb81c',_c:'1c1f1d666b67',fn:'BENEDITO APARECIDO TAVARES PROF',cd:'910636',ap:81.9,pp:84.7,pl:5.7,apo:1.75,sr:4.6,eq:6.0,aj:.515,nt:5.3,qe:0}
+]},
+{id:'G',nm:'Grupo G',sub:'Ásia I',ic:'🏯',col:'#de2910',items:[
+{id:52,co:'Japão',f:'🇯🇵',c1:'#bc002d',c2:'#ffffff',_c:'1c1f1d666b64',fn:'ISAURA VALENTINI HANSER PROFA',cd:'41836',ap:88.0,pp:null,pl:4.3,apo:3.67,sr:4.1,eq:-4.8,aj:.725,nt:5.3,qe:0},
+{id:53,co:'Coreia do Sul',f:'🇰🇷',c1:'#003478',c2:'#cd2e3a',_c:'1c1f1d666b65',fn:'JOSE CARLOS DA SILVA JUNIOR',cd:'44945',ap:80.1,pp:87.6,pl:5.1,apo:2.5,sr:4.0,eq:8.5,aj:.701,nt:5.3,qe:0},
+{id:54,co:'Irã',f:'🇮🇷',c1:'#009b3a',c2:'#ca0020',_c:'1c1f1d666b6a',fn:'JARDIM DAS ROSAS',cd:'923114',ap:78.2,pp:87.7,pl:4.7,apo:2.57,sr:3.6,eq:-2.8,aj:.835,nt:5.3,qe:0},
+{id:55,co:'Arábia Saudita',f:'🇸🇦',c1:'#006c35',c2:'#ffffff',_c:'1c1f1d666b6b',fn:'CHACARA CAMPONESA JARDIM VASSOURAS',cd:'288408',ap:77.5,pp:86.8,pl:4.7,apo:3,sr:3.7,eq:9.7,aj:.861,nt:5.2,qe:0},
+{id:56,co:'Austrália',f:'🇦🇺',c1:'#00008b',c2:'#ff0000',_c:'1c1f1d666b6c',fn:'ROGERIO LEVORIN PROF',cd:'38349',ap:81.1,pp:80.6,pl:4.6,apo:3.13,sr:3.6,eq:11.8,aj:.854,nt:5.2,qe:0},
+{id:57,co:'China',f:'🇨🇳',c1:'#de2910',c2:'#ffde00',_c:'1c1f1d666b6d',fn:'ISAURA DE MIRANDA BOTTO PROFA',cd:'5678',ap:84.0,pp:91.2,pl:5.1,apo:5,sr:3.8,eq:6.9,aj:.568,nt:5.1,qe:0},
+{id:58,co:'Índia',f:'🇮🇳',c1:'#138808',c2:'#ff9933',_c:'1c1f1d666b62',fn:'NAIR HANNICKEL ROMARO',cd:'904934',ap:74.7,pp:87.3,pl:4.5,apo:2.67,sr:4.3,eq:-0.5,aj:.702,nt:5.1,qe:0},
+{id:59,co:'Catar',f:'🇶🇦',c1:'#8d1b3d',c2:'#ffffff',_c:'1c1f1d666b63',fn:'JOSE PARADA PROFESSOR',cd:'50436',ap:78.9,pp:89.4,pl:5.8,apo:3.43,sr:3.4,eq:6.6,aj:.905,nt:5.0,qe:0}
+]},
+{id:'H',nm:'Grupo H',sub:'Ásia II & Oceania',ic:'🌏',col:'#007a33',items:[
+{id:60,co:'Emirados Árabes',f:'🇦🇪',c1:'#00732f',c2:'#ff0000',_c:'1c1f1d666c66',fn:'AFONSO MORENO',cd:'41853',ap:77.5,pp:78.1,pl:3.8,apo:3.71,sr:3.5,eq:-8.5,aj:.898,nt:4.9,qe:0},
+{id:61,co:'Nova Zelândia',f:'🇳🇿',c1:'#00247d',c2:'#cc142b',_c:'1c1f1d666c67',fn:'PARQUE CENTO E VINTE II',cd:'924167',ap:78.2,pp:85.2,pl:4.6,apo:3.5,sr:3.6,eq:6.3,aj:.907,nt:4.8,qe:0},
+{id:62,co:'Iraque',f:'🇮🇶',c1:'#007a3d',c2:'#ce1126',_c:'1c1f1d666c64',fn:'JARDIM ALEGRIA II',cd:'50404',ap:77.1,pp:82.1,pl:3.9,apo:3.33,sr:3.4,eq:-5.8,aj:.916,nt:4.8,qe:0},
+{id:63,co:'Omã',f:'🇴🇲',c1:'#db072d',c2:'#00805a',_c:'1c1f1d666c65',fn:'DR. NELSON MANZANARES',cd:'38325',ap:83.0,pp:81.6,pl:6.4,apo:3.33,sr:4.7,eq:-4.9,aj:.591,nt:4.5,qe:0},
+{id:64,co:'Bahrein',f:'🇧🇭',c1:'#ce1126',c2:'#ffffff',_c:'1c1f1d666c6a',fn:'BAIRRO JUNDIAIZINHO',cd:'902652',ap:79.5,pp:71.2,pl:6.1,apo:3,sr:3.8,eq:3.3,aj:.700,nt:4.3,qe:0},
+{id:65,co:'Vietnã',f:'🇻🇳',c1:'#da251d',c2:'#ffcd00',_c:'1c1f1d666c6b',fn:'BELEM DA SERRA',cd:'5502',ap:89.4,pp:82.6,pl:7.3,apo:0.33,sr:4.0,eq:9.5,aj:.590,nt:4.2,qe:0},
+{id:66,co:'Tailândia',f:'🇹🇭',c1:'#a51931',c2:'#2d2a4a',_c:'1c1f1d666c6c',fn:'LYDIA SCALET WALKER PROFA',cd:'906232',ap:87.0,pp:82.3,pl:7.0,apo:0.75,sr:3.8,eq:6.3,aj:.750,nt:3.9,qe:0},
+{id:67,co:'Indonésia',f:'🇮🇩',c1:'#ff0000',c2:'#ffffff',_c:'1c1f1d666c6d',fn:'RITUCO MITANI PROFA',cd:'5691',ap:78.9,pp:81.8,pl:5.5,apo:3.33,sr:3.8,eq:13.9,aj:.761,nt:3.9,qe:0},
+{id:68,co:'Malásia',f:'🇲🇾',c1:'#cc0001',c2:'#010066',_c:'1c1f1d666c62',fn:'URE-CAIEIRAS (Geral)',cd:'—',ap:83.5,pp:86.4,pl:6.76,apo:2.99,sr:4.0,eq:-1.19,aj:.736,nt:6.5,qe:1.54}
+]}
+];
+
+const revealed=new Set();
+const STORAGE_KEY='multiplica_album68_v2';
+let TOTAL=0;
+G.forEach(g=>TOTAL+=g.items.length);
+document.getElementById('ot').textContent=TOTAL;
+
+function load(){try{const d=localStorage.getItem(STORAGE_KEY);if(d)JSON.parse(d).forEach(id=>revealed.add(id))}catch(e){}}
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify([...revealed]))}catch(e){}}
+
+/* NAV */
+function rNav(){
+  const nav=document.getElementById('pNav');
+  G.forEach(g=>{
+    const a=document.createElement('a');
+    a.href='#g-'+g.id;a.className='pl';
+    a.innerHTML=`<span>${g.ic} ${g.nm}</span><span class="c" id="nc-${g.id}">0/${g.items.length}</span>`;
+    a.addEventListener('click',e=>{e.preventDefault();document.getElementById('g-'+g.id).scrollIntoView({behavior:'smooth'})});
+    nav.appendChild(a);
+  });
+}
+
+/* GROUPS */
+function rGroups(){
+  const box=document.getElementById('gc');
+  G.forEach(g=>{
+    const s=document.createElement('section');
+    s.className='gs';s.id='g-'+g.id;
+    s.innerHTML=`<div class="gh" style="border-left:3px solid ${g.col}"><div class="gl2"><span class="gi">${g.ic}</span><div class="gt"><h2>${g.nm} — ${g.sub}</h2><span class="gs2">${g.items.length} escolas</span></div></div><div class="gr"><span class="gp" id="gp-${g.id}">0/${g.items.length}</span><div class="gb"><div class="gf" id="gf-${g.id}" style="background:${g.col}"></div></div></div></div><div class="sg" id="sg-${g.id}"></div><div class="gdone" id="gd-${g.id}"><p>&#9733; ${g.nm} completo! &#9733;</p></div>`;
+    box.appendChild(s);
+    const grid=s.querySelector('.sg');
+    g.items.forEach((it,i)=>{
+      const pad=String(it.id).padStart(2,'0');
+      const stars=it.nt>=7.5?4:it.nt>=5.5?3:2;
+      const sl=document.createElement('div');
+      sl.className='ss';sl.id='s-'+it.id;
+      sl.style.setProperty('--c1',it.c1);sl.style.setProperty('--c2',it.c2);sl.style.setProperty('--sc',it.c1);
+      const shortN=it.fn.length>28?it.fn.substring(0,26)+'...':it.fn;
+      sl.innerHTML=`<div class="rf"></div><div class="sp"><span class="sn">${pad}</span><div class="sq">?</div><span class="sh2">Cole o código</span></div><div class="sf"><div class="sfb"></div><div class="swm">${it.f}</div><div class="sht"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="" class="sl"><div class="sm"><span class="snm">#${pad}</span><span class="stag">${it.co}</span></div></div><div class="sfl"><span class="sfe">${it.f}</span><span class="scn">${it.co.toUpperCase()}</span></div><div class="sbt"><div class="ssch">${shortN}</div><div class="sgr"><span class="sgnota">${_FP(it.nt)}</span><div class="sgstars">${starsN(stars)}</div></div></div><div class="sac"></div>`;
+      sl.style.opacity='0';sl.style.transform='translateY(12px)';sl.style.transition='opacity .4s ease, transform .4s ease, border-color .3s, box-shadow .3s';
+      grid.appendChild(sl);
+      setTimeout(()=>{sl.style.opacity='1';sl.style.transform='translateY(0)'},150+i*40);
+      sl.addEventListener('click',()=>{if(sl.classList.contains('r'))openModal(it);else document.getElementById('ci').focus()});
+    });
+  });
+}
+
+/* CODES — Only rendered after admin password */
+function rCodes(){
+  const box=document.getElementById('codesArea');
+  G.forEach(g=>{
+    const d=document.createElement('details');d.className='codes-sec';
+    let rows='';
+    g.items.forEach(it=>{
+      const pad=String(it.id).padStart(2,'0');
+      rows+=`<tr id="r-${it.id}"><td>${pad}</td><td>${it.f}</td><td>${it.co}</td><td>${it.fn.substring(0,25)}</td><td class="cv">${_D(it._c)}</td><td style="text-align:center"><span class="si lk" id="si-${it.id}">&#10007;</span></td></tr>`;
+    });
+    d.innerHTML=`<summary>${g.ic} ${g.nm} — ${g.sub}</summary><table class="ct"><thead><tr><th>#</th><th></th><th>País</th><th>Escola</th><th>Código</th><th style="text-align:center">St</th></tr></thead><tbody>${rows}</tbody></table>`;
+    box.appendChild(d);
+  });
+}
+
+/* ADMIN GATE */
+let adminUnlocked=false;
+document.getElementById('adminGate').addEventListener('click',function(){
+  const row=document.getElementById('adminPwRow');
+  if(!row.classList.contains('show')){row.classList.add('show');document.getElementById('adminPw').focus()}
+});
+document.getElementById('adminPwBtn').addEventListener('click',tryAdmin);
+document.getElementById('adminPw').addEventListener('keydown',e=>{if(e.key==='Enter')tryAdmin()});
+
+function tryAdmin(){
+  const pw=document.getElementById('adminPw').value;
+  const msg=document.getElementById('adminPwMsg');
+  if(pw===_ADMIN_PW){
+    adminUnlocked=true;
+    msg.classList.remove('show');
+    document.getElementById('adminGate').style.display='none';
+    document.getElementById('codesArea').classList.add('open');
+    updateAdminStatuses();
+  }else{
+    msg.classList.add('show');
+    document.getElementById('adminPw').value='';
+    document.getElementById('adminPw').focus();
+  }
+}
+
+function updateAdminStatuses(){
+  if(!adminUnlocked)return;
+  revealed.forEach(id=>{
+    const si=document.getElementById('si-'+id);
+    if(si){si.className='si ul';si.innerHTML='&#10003;'}
+  });
+}
+
+/* MODAL */
+function openModal(it){
+  const pad=String(it.id).padStart(2,'0');
+  const stars=it.nt>=7.5?4:it.nt>=5.5?3:2;
+  const metrics=[
+    {lb:'Aluno Presente',vl:it.ap,mn:70,mx:100,fmt:_FP(it.ap)},
+    {lb:'Prof. Presente',vl:it.pp,mn:60,mx:100,fmt:_FP(it.pp)},
+    {lb:'Plataformas',vl:it.pl,mn:0,mx:10,fmt:_F(it.pl)},
+    {lb:'Apoio Presencial',vl:it.apo,mn:0,mx:6,fmt:_F(it.apo)},
+    {lb:'SARESP',vl:it.sr,mn:0,mx:10,fmt:_F(it.sr)},
+    {lb:'SARESP Equidade',vl:it.eq,mn:-20,mx:30,fmt:it.eq==null?'—':(it.eq>0?'+':'')+it.eq.toFixed(1),isEq:true},
+    {lb:'Ajuste Desigualdades',vl:it.aj,mn:0,mx:1,fmt:it.aj.toFixed(3)},
+    {lb:'Qual. Educacional',vl:it.qe,mn:0,mx:10,fmt:_F(it.qe)}
+  ];
+  let rows='';
+  metrics.forEach(m=>{
+    if(m.vl==null){rows+=`<div class="m-row"><span class="m-row-label">${m.lb}</span><div class="m-row-bar"><div class="m-row-fill" style="width:0;background:#64748b"></div></div><span class="m-row-val" style="color:#64748b">—</span></div>`;return}
+    const pct=_barP(m.vl,m.mn,m.mx);
+    const col=m.isEq?_barCE(m.vl):_barC(m.vl,m.mn,m.mx);
+    rows+=`<div class="m-row"><span class="m-row-label">${m.lb}</span><div class="m-row-bar"><div class="m-row-fill" style="width:${pct}%;background:${col}"></div></div><span class="m-row-val">${m.fmt}</span></div>`;
+  });
+  const inner=document.getElementById('modalInner');
+  inner.innerHTML=`<button class="modal-x" onclick="closeModal()">&#10005;</button><div class="m-hdr"><div class="m-flag">${it.f}</div><div class="m-country">${it.co}</div><div class="m-school">${it.fn}</div><div class="m-code">Código da escola: ${it.cd}</div><div class="m-nota-box"><span class="m-nota-label">Nota Geral</span><span class="m-nota-num">${it.nt.toFixed(1).replace('.',',')}</span><div class="m-nota-stars">${starsN(stars)}</div></div></div><div class="m-body"><div class="m-section-title">&#128202; Indicadores</div>${rows}</div><div class="m-footer"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt=""><span>URE Caieiras · Seduc SP · Copa REPLANEJAMENTO</span></div>`;
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal()});
+
+/* PROGRESS */
+function updProg(){
+  const cnt=revealed.size,pct=Math.round((cnt/TOTAL)*100);
+  document.getElementById('oc').textContent=cnt;document.getElementById('of').style.width=pct+'%';document.getElementById('op').textContent=pct+'%';
+  const pills=document.querySelectorAll('.pl');
+  G.forEach((g,gi)=>{
+    const pc=g.items.filter(it=>revealed.has(it.id)).length;
+    const pp=Math.round((pc/g.items.length)*100);
+    document.getElementById('gp-'+g.id).textContent=pc+'/'+g.items.length;
+    document.getElementById('gf-'+g.id).style.width=pp+'%';
+    document.getElementById('nc-'+g.id).textContent=pc+'/'+g.items.length;
+    const d=document.getElementById('gd-'+g.id);
+    if(pc===g.items.length){d.classList.add('show');if(pills[gi])pills[gi].dataset.s='done'}else{d.classList.remove('show');if(pills[gi])delete pills[gi].dataset.s}
+  });
+  if(adminUnlocked)updateAdminStatuses();
+  if(cnt===TOTAL){document.getElementById('banner').classList.add('show');conf(100)}
+}
+
+/* CONFETTI */
+function conf(n){
+  const box=document.getElementById('cbox');
+  const cols=['#ffec9e','#d32f2f','#4ade80','#60a5fa','#fff','#f472b6','#fbbf24','#a78bfa'];
+  for(let i=0;i<n;i++){
+    const p=document.createElement('div');p.className='cp';
+    p.style.left=Math.random()*100+'%';p.style.background=cols[Math.floor(Math.random()*cols.length)];
+    p.style.animationDelay=Math.random()*.5+'s';p.style.animationDuration=(1.4+Math.random()*1.2)+'s';
+    p.style.width=(3+Math.random()*6)+'px';p.style.height=(7+Math.random()*9)+'px';
+    p.style.borderRadius=Math.random()>.5?'50%':'2px';
+    box.appendChild(p);setTimeout(()=>p.remove(),3000);
+  }
+}
+
+/* REDEEM */
+function redeem(){
+  const inp=document.getElementById('ci'),msg=document.getElementById('cm');
+  const raw=inp.value.trim().toUpperCase();
+  if(!raw){msg.textContent='';return}
+  let match=null;
+  for(const g of G){for(const it of g.items){if(raw===_D(it._c)){match=it;break}}if(match)break}
+  if(!match){inp.classList.remove('gl');inp.classList.add('sh');msg.className='cm e';msg.textContent='Código inválido.';setTimeout(()=>inp.classList.remove('sh'),500);return}
+  if(revealed.has(match.id)){msg.className='cm o';msg.textContent=`Escola #${String(match.id).padStart(2,'0')} já revelada!`;inp.value='';return}
+  revealed.add(match.id);save();
+  inp.classList.remove('sh');inp.classList.add('gl');
+  msg.className='cm o';msg.textContent=`${match.f} ${match.co} — ${match.fn.substring(0,30)} revelada!`;
+  setTimeout(()=>inp.classList.remove('gl'),700);
+  const sl=document.getElementById('s-'+match.id);
+  sl.classList.add('r','pp2');setTimeout(()=>sl.classList.remove('pp2'),800);
+  if(adminUnlocked){const si=document.getElementById('si-'+match.id);if(si){si.className='si ul';si.innerHTML='&#10003;'}}
+  inp.value='';updProg();
+  const grp=G.find(g=>g.items.some(it=>it.id===match.id));
+  conf(grp.items.every(it=>revealed.has(it.id))?35:12);
+}
+
+/* RESTORE */
+function restore(){
+  revealed.forEach(id=>{
+    const sl=document.getElementById('s-'+id);if(sl)sl.classList.add('r');
+  });
+}
+
+/* EVENTS */
+document.getElementById('cb').addEventListener('click',redeem);
+document.getElementById('ci').addEventListener('keydown',e=>{if(e.key==='Enter')redeem()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+window.clearAlbum=function(){localStorage.removeItem(STORAGE_KEY);location.reload()};
+
+/* INIT */
+rNav();rGroups();rCodes();load();restore();updProg();
+</script>
+</body>
+</html>
