@@ -5,13 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Álbum da Copa — URE Caieiras</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#0a2f6c 0%,#041a3a 100%);min-height:100vh;padding:12px;color:#e2e8f0}
 .mc{max-width:1340px;margin:0 auto;background:#0f1a24;border-radius:36px;padding:18px;box-shadow:0 30px 35px rgba(0,0,0,.5),inset 0 1px 4px rgba(255,255,200,.06);border:1px solid #d32f2f;position:relative;overflow:hidden}
 .mc::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.02;pointer-events:none;border-radius:36px}
-
 .hdr{display:flex;justify-content:space-between;align-items:center;background:rgba(10,47,108,.9);backdrop-filter:blur(6px);padding:12px 22px;border-radius:60px;margin-bottom:14px;flex-wrap:wrap;gap:10px;position:relative;z-index:2}
 .logo-a{display:flex;align-items:center;gap:10px}
 .logo-a img{height:46px;background:#fff;padding:3px;border-radius:10px}
@@ -20,18 +19,16 @@ body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#0a2f6c 0%
 .tb{background:#d32f2f;color:#fff;padding:6px 16px;border-radius:3rem;font-weight:700;letter-spacing:.8px;font-size:.75rem;display:flex;align-items:center;gap:6px;white-space:nowrap}
 .tb .d{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:bl 1.5s ease infinite}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:.3}}
-
 .pn{position:sticky;top:0;z-index:100;display:flex;gap:4px;padding:8px 4px;overflow-x:auto;background:rgba(15,26,36,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:14px;scrollbar-width:none;border-radius:16px}
 .pn::-webkit-scrollbar{display:none}
 .pl{flex-shrink:0;display:flex;align-items:center;gap:5px;padding:6px 11px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:transparent;color:#94a3b8;font-size:.72rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .25s;white-space:nowrap}
 .pl:hover{background:rgba(255,255,255,.05);color:#fff}
 .pl .c{font-family:'JetBrains Mono',monospace;font-size:.55rem;padding:1px 5px;border-radius:5px;background:rgba(255,255,255,.05)}
 .pl[data-s="done"]{border-color:#4ade80;color:#4ade80}
-
 .cb{background:rgba(10,47,108,.35);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px 16px;margin-bottom:14px;position:relative;z-index:2;animation:fu .5s ease .15s forwards;opacity:0}
 @keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .cl{font-family:'JetBrains Mono',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#60a5fa;margin-bottom:10px;display:flex;align-items:center;gap:5px}
-.cl::before{content:'>'}color:#ffec9e;font-weight:700}
+.cl::before{content:'>';color:#ffec9e;font-weight:700}
 .cr{display:flex;gap:8px}
 .ci{flex:1;background:rgba(0,0,0,.3);border:2px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:1rem;color:#fff;letter-spacing:.1em;text-transform:uppercase;outline:none;transition:border-color .3s,box-shadow .3s}
 .ci::placeholder{color:#64748b;font-size:.75rem;letter-spacing:.05em;text-transform:none}
@@ -44,14 +41,12 @@ body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#0a2f6c 0%
 .btn:active{transform:scale(.97)}
 .cm{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:.68rem;min-height:16px}
 .cm.e{color:#f87171}.cm.o{color:#4ade80}
-
 .op{display:flex;align-items:center;gap:12px;margin-bottom:16px;animation:fu .5s ease .3s forwards;opacity:0;position:relative;z-index:2}
 .pl2{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:#94a3b8;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
 .pl2 b{color:#ffec9e;font-size:.82rem}
 .pt{flex:1;height:8px;background:rgba(0,0,0,.3);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.05)}
 .pf{height:100%;width:0;background:linear-gradient(90deg,#d32f2f,#ffec9e,#4ade80,#60a5fa);border-radius:8px;transition:width .6s cubic-bezier(.23,1,.32,1)}
 .pp{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#ffec9e;min-width:46px;text-align:right}
-
 .gs{margin-bottom:24px;border-radius:20px;overflow:hidden;position:relative;z-index:2;scroll-margin-top:60px;animation:fu .4s ease .35s forwards;opacity:0}
 .gh{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px;background:rgba(10,47,108,.45);border-bottom:1px solid rgba(255,255,255,.05);flex-wrap:wrap}
 .gl2{display:flex;align-items:center;gap:8px}
@@ -62,20 +57,16 @@ body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#0a2f6c 0%
 .gp{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:#ffec9e}
 .gb{width:60px;height:4px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden}
 .gf{height:100%;border-radius:4px;transition:width .5s}
-
 .sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;padding:14px;background:rgba(0,0,0,.12)}
-
 .ss{position:relative;aspect-ratio:3/4;background:rgba(0,0,0,.22);border:2px dashed rgba(255,255,255,.07);border-radius:12px;overflow:hidden;transition:border-color .3s,box-shadow .3s,transform .3s;cursor:pointer}
 .ss:hover:not(.r){border-color:rgba(255,236,158,.2);transform:translateY(-2px)}
 .ss.r{border-style:solid;border-color:var(--sc,#ffec9e);box-shadow:0 4px 16px rgba(0,0,0,.3)}
 .ss.r:hover{transform:none}
-
 .sp{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transition:opacity .4s;background:repeating-linear-gradient(45deg,transparent,transparent 9px,rgba(255,255,255,.012) 9px,rgba(255,255,255,.012) 10px)}
 .ss.r .sp{opacity:0;pointer-events:none}
 .sn{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(255,255,255,.07);line-height:1}
 .sq{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:rgba(255,255,255,.1)}
 .sh2{font-family:'JetBrains Mono',monospace;font-size:.45rem;color:rgba(255,255,255,.12);text-transform:uppercase;letter-spacing:.06em}
-
 .sf{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;transform:scale(.85) rotateY(90deg);transition:opacity .5s,transform .55s cubic-bezier(.23,1,.32,1);pointer-events:none}
 .ss.r .sf{opacity:1;transform:scale(1) rotateY(0);pointer-events:auto}
 .sfb{position:absolute;inset:0;background:linear-gradient(145deg,var(--c1,#1a3a5c),var(--c2,#0a1a2c))}
@@ -96,91 +87,81 @@ body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#0a2f6c 0%
 .sgstars svg{width:7px;height:7px;fill:#ffec9e;opacity:.8}
 .sac{position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c1,#ffec9e),var(--c2,#60a5fa))}
 .swm{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:5rem;opacity:.06;z-index:1;pointer-events:none;filter:grayscale(.2)}
-
 .rf{position:absolute;inset:0;background:radial-gradient(circle,rgba(255,236,158,.35),transparent 60%);opacity:0;pointer-events:none;z-index:10}
 .ss.pp2 .rf{animation:bu .6s ease forwards}
 @keyframes bu{0%{opacity:0;transform:scale(.4)}30%{opacity:1;transform:scale(1.2)}100%{opacity:0;transform:scale(2)}}
 @keyframes skp{0%{opacity:0;transform:scale(.3) rotateY(180deg)}60%{opacity:1;transform:scale(1.04) rotateY(-4deg)}100%{opacity:1;transform:scale(1) rotateY(0)}}
 .ss.pp2 .sf{animation:skp .6s cubic-bezier(.23,1,.32,1) forwards}
-
 .gdone{display:none;padding:12px 18px;text-align:center;border-top:1px solid rgba(255,255,255,.03);background:rgba(74,222,128,.03)}
 .gdone.show{display:block}
 .gdone p{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:#4ade80;letter-spacing:.05em}
-
-/* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:10000;align-items:center;justify-content:center;padding:16px}
 .modal-overlay.open{display:flex}
-.modal{background:#0f1a24;border:1px solid rgba(255,255,255,.1);border-radius:24px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:modalIn .4s ease}
-@keyframes modalIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.modal-x{position:absolute;top:12px;right:14px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2}
-.modal-x:hover{background:rgba(239,68,68,.2);border-color:#ef4444;color:#f87171}
-.m-hdr{padding:24px 24px 16px;text-align:center;position:relative}
-.m-flag{font-size:4rem;line-height:1;margin-bottom:8px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
-.m-country{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.08em;color:#94a3b8;margin-bottom:2px}
-.m-school{font-size:.95rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:4px}
-.m-code{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#64748b;letter-spacing:.08em}
-.m-nota-box{display:inline-flex;flex-direction:column;align-items:center;background:rgba(255,236,158,.08);border:1px solid rgba(255,236,158,.15);border-radius:16px;padding:12px 28px;margin:12px 0}
-.m-nota-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;color:#ffec9e}
-.m-nota-label{font-family:'JetBrains Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8}
-.m-nota-stars{display:flex;gap:2px;margin-top:4px}
-.m-nota-stars svg{width:12px;height:12px;fill:#ffec9e}
-.m-body{padding:0 24px 24px}
-.m-section-title{font-family:'JetBrains Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:#60a5fa;margin:16px 0 10px;display:flex;align-items:center;gap:6px}
-.m-section-title::before{content:''}width:4px;height:4px;border-radius:50%;background:#60a5fa}
-.m-row{display:flex;align-items:center;gap:10px;padding:6px 0}
-.m-row-label{font-size:.72rem;font-weight:600;color:#94a3b8;min-width:110px;white-space:nowrap}
-.m-row-bar{flex:1;height:6px;background:rgba(255,255,255,.05);border-radius:6px;overflow:hidden}
-.m-row-fill{height:100%;border-radius:6px;transition:width .6s ease}
-.m-row-val{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:700;color:#fff;min-width:50px;text-align:right;white-space:nowrap}
-.m-footer{padding:14px 24px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:10px}
-.m-footer img{width:30px;height:30px;border-radius:6px;background:#fff;padding:1px}
-.m-footer span{font-size:.6rem;color:#4a6a8a;letter-spacing:.04em}
-
-/* ADMIN AREA */
+.modal{background:#0f1a24;border:1px solid rgba(255,255,255,.1);border-radius:24px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:mi .4s ease}
+@keyframes mi{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.mx{position:absolute;top:12px;right:14px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2}
+.mx:hover{background:rgba(239,68,68,.2);border-color:#ef4444;color:#f87171}
+.mh{padding:24px 24px 16px;text-align:center;position:relative}
+.mf{font-size:4rem;line-height:1;margin-bottom:8px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
+.mc2{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.08em;color:#94a3b8;margin-bottom:2px}
+.ms{font-size:.95rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:4px}
+.mk{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#64748b;letter-spacing:.08em}
+.mn{display:inline-flex;flex-direction:column;align-items:center;background:rgba(255,236,158,.08);border:1px solid rgba(255,236,158,.15);border-radius:16px;padding:12px 28px;margin:12px 0}
+.mnn{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;color:#ffec9e}
+.mnl{font-family:'JetBrains Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8}
+.mns{display:flex;gap:2px;margin-top:4px}
+.mns svg{width:12px;height:12px;fill:#ffec9e}
+.mb{padding:0 24px 24px}
+.mst{font-family:'JetBrains Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:#60a5fa;margin:16px 0 10px;display:flex;align-items:center;gap:6px}
+.mst::before{content:'';display:inline-block;width:4px;height:4px;border-radius:50%;background:#60a5fa}
+.mr{display:flex;align-items:center;gap:10px;padding:6px 0}
+.mrl{font-size:.72rem;font-weight:600;color:#94a3b8;min-width:110px;white-space:nowrap}
+.mrb{flex:1;height:6px;background:rgba(255,255,255,.05);border-radius:6px;overflow:hidden}
+.mrf{height:100%;border-radius:6px;transition:width .6s ease}
+.mrv{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:700;color:#fff;min-width:50px;text-align:right;white-space:nowrap}
+.mf2{padding:14px 24px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:10px}
+.mf2 img{width:30px;height:30px;border-radius:6px;background:#fff;padding:1px}
+.mf2 span{font-size:.6rem;color:#4a6a8a;letter-spacing:.04em}
 .admin-zone{margin-top:28px;position:relative;z-index:2;animation:fu .4s ease .5s forwards;opacity:0}
-.admin-gate{text-align:center;padding:24px 20px;background:rgba(10,47,108,.2);border:1px dashed rgba(255,255,255,.06);border-radius:14px;cursor:pointer;transition:all .3s}
-.admin-gate:hover{background:rgba(10,47,108,.3);border-color:rgba(255,236,158,.15)}
-.admin-gate-icon{font-size:1.4rem;margin-bottom:6px;opacity:.3}
-.admin-gate-text{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:#4a6a8a;letter-spacing:.1em;text-transform:uppercase}
-.admin-pw-row{display:none;margin-top:12px;justify-content:center;gap:8px;align-items:center}
-.admin-pw-row.show{display:flex}
-.admin-pw{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:#fff;outline:none;width:200px;text-align:center;letter-spacing:.15em}
-.admin-pw:focus{border-color:#60a5fa}
-.admin-pw-btn{background:rgba(255,236,158,.1);border:1px solid rgba(255,236,158,.2);border-radius:8px;padding:8px 16px;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:#ffec9e;cursor:pointer;transition:all .2s}
-.admin-pw-btn:hover{background:rgba(255,236,158,.2)}
-.admin-pw-msg{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:#f87171;margin-top:6px;display:none}
-.admin-pw-msg.show{display:block}
-
-.codes-area{display:none;margin-top:14px}
+.admin-gate{text-align:center;padding:24px 20px;background:rgba(10,47,108,.2);border:1px dashed rgba(255,255,255,.08);border-radius:14px;cursor:pointer;transition:all .3s;user-select:none}
+.admin-gate:hover{background:rgba(10,47,108,.35);border-color:rgba(255,236,158,.2)}
+.admin-gate-icon{font-size:1.6rem;margin-bottom:8px;opacity:.5}
+.admin-gate-text{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#60a5fa;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.admin-gate-sub{font-family:'JetBrains Mono',monospace;font-size:.52rem;color:#4a6a8a;letter-spacing:.06em;margin-top:4px}
+.admin-pw-box{display:none;margin-top:16px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px;text-align:center}
+.admin-pw-box.open{display:block;animation:fu .3s ease forwards}
+.admin-pw-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:#94a3b8;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.admin-pw-row{display:flex;justify-content:center;gap:8px;align-items:center}
+.admin-pw{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#fff;outline:none;width:200px;text-align:center;letter-spacing:.15em;transition:border-color .3s}
+.admin-pw:focus{border-color:#60a5fa;box-shadow:0 0 10px rgba(96,165,250,.15)}
+.admin-pw-btn{background:linear-gradient(135deg,#ffec9e,#f0c030);border:none;border-radius:8px;padding:10px 18px;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.05em;color:#0a1a2c;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.admin-pw-btn:hover{transform:scale(1.03);box-shadow:0 4px 12px rgba(255,236,158,.3)}
+.admin-pw-msg{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:#f87171;margin-top:8px;min-height:16px}
+.codes-area{display:none;margin-top:16px}
 .codes-area.open{display:block;animation:fu .4s ease forwards}
-
-.codes-sec{margin-bottom:10px;background:rgba(10,47,108,.25);border:1px solid rgba(255,255,255,.05);border-radius:14px;overflow:hidden}
-.codes-sec summary{padding:14px 18px;font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.04em;color:#ffec9e;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;transition:background .2s}
+.codes-sec{margin-bottom:8px;background:rgba(10,47,108,.2);border:1px solid rgba(255,255,255,.04);border-radius:12px;overflow:hidden}
+.codes-sec summary{padding:12px 16px;font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.04em;color:#ffec9e;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;transition:background .2s}
 .codes-sec summary::-webkit-details-marker{display:none}
-.codes-sec summary::before{content:'▸';transition:transform .2s;font-size:.8rem}
+.codes-sec summary::before{content:'\25B8';transition:transform .2s;font-size:.8rem}
 .codes-sec[open] summary::before{transform:rotate(90deg)}
 .codes-sec summary:hover{background:rgba(255,236,158,.03)}
 .ct{width:100%;border-collapse:collapse}
-.ct th{font-family:'JetBrains Mono',monospace;font-size:.52rem;text-transform:uppercase;letter-spacing:.08em;color:#60a5fa;text-align:left;padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.05)}
-.ct td{font-family:'JetBrains Mono',monospace;font-size:.62rem;padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.02);color:#94a3b8}
+.ct th{font-family:'JetBrains Mono',monospace;font-size:.5rem;text-transform:uppercase;letter-spacing:.08em;color:#60a5fa;text-align:left;padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.05)}
+.ct td{font-family:'JetBrains Mono',monospace;font-size:.58rem;padding:5px 10px;border-bottom:1px solid rgba(255,255,255,.02);color:#94a3b8}
 .ct tr:last-child td{border-bottom:none}
 .ct .cv{color:#ffec9e;font-weight:700;letter-spacing:.04em}
 .ct .si{display:inline-flex;width:14px;height:14px;border-radius:50%;align-items:center;justify-content:center;font-size:.5rem}
 .si.lk{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2)}
 .si.ul{background:rgba(74,222,128,.12);color:#4ade80;border:1px solid rgba(74,222,128,.2)}
-
 .cb2{display:none;background:linear-gradient(135deg,rgba(10,47,108,.5),rgba(211,47,47,.15));border:2px solid #ffec9e;border-radius:18px;padding:26px;text-align:center;margin-top:22px;position:relative;z-index:2;animation:bi .7s ease}
 @keyframes bi{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
 .cb2.show{display:block}
 .cb2 h2{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#ffec9e;letter-spacing:.06em;margin-bottom:4px}
 .cb2 p{color:#94a3b8;font-size:.9rem}
-
 .cbox{position:fixed;inset:0;pointer-events:none;z-index:100000;overflow:hidden}
 .cp{position:absolute;top:-20px;opacity:0;animation:cf 2s ease forwards}
 @keyframes cf{0%{opacity:1;transform:translateY(0) rotate(0) scale(1)}100%{opacity:0;transform:translateY(100vh) rotate(720deg) scale(.4)}}
-
 footer{text-align:center;margin-top:20px;padding:.8rem;color:#3a5a7a;font-size:.65rem;border-top:1px solid rgba(255,255,255,.03);position:relative;z-index:2}
-
 @media(max-width:900px){.sg{grid-template-columns:repeat(3,1fr);gap:8px}}
 @media(max-width:640px){
 .mc{padding:10px;border-radius:20px}
@@ -192,10 +173,10 @@ footer{text-align:center;margin-top:20px;padding:.8rem;color:#3a5a7a;font-size:.
 .sgnota{font-size:1.1rem}
 .gh{padding:10px 12px}
 .modal{max-height:85vh;border-radius:18px}
-.m-hdr{padding:18px 18px 12px}
-.m-body{padding:0 18px 18px}
-.m-row-label{min-width:85px;font-size:.65rem}
-.m-row-val{font-size:.65rem;min-width:42px}
+.mh{padding:18px 18px 12px}
+.mb{padding:0 18px 18px}
+.mrl{min-width:85px;font-size:.65rem}
+.mrv{font-size:.65rem;min-width:42px}
 .admin-pw{width:160px}
 }
 @media(max-width:380px){.sg{grid-template-columns:1fr}}
@@ -205,8 +186,8 @@ footer{text-align:center;margin-top:20px;padding:.8rem;color:#3a5a7a;font-size:.
 <div class="mc">
   <div class="hdr">
     <div class="logo-a">
-      <img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo 3D Seduc">
-      <div class="logo-t">Álbum da Copa do REPLANEJAMENTO<small>URE CAIEIRAS — Seduc SP</small></div>
+      <img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo Seduc">
+      <div class="logo-t">Álbum da Copa da REPLANEJAMENTO<small>URE CAIEIRAS — Seduc SP</small></div>
     </div>
     <div class="tb"><span class="d"></span>67 Escolas & URE</div>
   </div>
@@ -214,151 +195,145 @@ footer{text-align:center;margin-top:20px;padding:.8rem;color:#3a5a7a;font-size:.
   <div class="cb">
     <div class="cl">Cole o código da figurinha para revelar</div>
     <div class="cr">
-      <input type="text" class="ci" id="ci" placeholder="Digite o código..." maxlength="12" autocomplete="off" spellcheck="false">
-      <button class="btn" id="cb">REVELAR</button>
+      <input type="text" class="ci" id="ci" placeholder="Ex: FIG01" maxlength="10" autocomplete="off" spellcheck="false">
+      <button class="btn" id="btnReveal">REVELAR</button>
     </div>
     <div class="cm" id="cm"></div>
   </div>
   <div class="op">
-    <span class="pl2">Reveladas: <b id="oc">0</b> / <b id="ot">67 Escolas & URE</b></span>
+    <span class="pl2">Reveladas: <b id="oc">0</b> / <b id="ot">68</b></span>
     <div class="pt"><div class="pf" id="of"></div></div>
     <span class="pp" id="op">0%</span>
   </div>
   <div id="gc"></div>
   <div class="cb2" id="banner"><h2>&#9733; Álbum Completo! &#9733;</h2><p>Todas as 68 figurinhas reveladas!</p></div>
-
-  <!-- ADMIN GATE — Códigos protegidos por senha -->
-  <div class="admin-zone" id="adminZone">
+  <div class="admin-zone">
     <div class="admin-gate" id="adminGate">
-      <div class="admin-gate-icon">🔐</div>
-      <div class="admin-gate-text">Painel do REPLANEJAMENTO</div>
-      <div class="admin-pw-row" id="adminPwRow">
+      <div class="admin-gate-icon">&#128274;</div>
+      <div class="admin-gate-text">Painel do Formador</div>
+      <div class="admin-gate-sub">Toque para acessar os códigos</div>
+    </div>
+    <div class="admin-pw-box" id="adminPwBox">
+      <div class="admin-pw-label">Senha do formador</div>
+      <div class="admin-pw-row">
         <input type="password" class="admin-pw" id="adminPw" placeholder="Senha" maxlength="20">
-        <button class="admin-pw-btn" id="adminPwBtn">Acessar</button>
+        <button class="admin-pw-btn" id="adminPwBtn">ACESSAR</button>
       </div>
-      <div class="admin-pw-msg" id="adminPwMsg">Senha incorreta</div>
+      <div class="admin-pw-msg" id="adminPwMsg"></div>
     </div>
     <div class="codes-area" id="codesArea"></div>
   </div>
-
-  <footer>Copa REPLANEJAMNTO &bull; URE Caieiras &bull; Seduc SP &bull; 67 Escolas & URE</footer>
+  <footer>Copa REPLANEJAMENTO &bull; URE Caieiras &bull; Seduc SP</footer>
 </div>
 <div class="modal-overlay" id="modal"><div class="modal" id="modalInner"></div></div>
 <div class="cbox" id="cbox"></div>
 
 <script>
-/* ============================================================
-   CRIPTOGRAFIA + UTILITÁRIOS
-   ============================================================ */
-const _v1=0x3C,_v2=0x1E;
-function _D(h){const k=_v1+_v2;let r='';for(let i=0;i<h.length;i+=2)r+=String.fromCharCode(parseInt(h.substr(i,2),16)^k);return r}
+/* UTILITÁRIOS */
 function _F(v){return v==null?'—':(typeof v==='number'?v.toFixed(1).replace('.',','):v)}
 function _FP(v){return v==null?'—':v.toFixed(1).replace('.',',')+'%'}
-function _barP(v,min,max){return Math.max(0,Math.min(100,((v-min)/(max-min))*100))}
-function _barC(v,min,max){const p=(v-min)/(max-min);if(p>=.75)return'#4ade80';if(p>=.5)return'#fbbf24';if(p>=.25)return'#fb923c';return'#f87171'}
+function _barP(v,mn,mx){return Math.max(0,Math.min(100,((v-mn)/(mx-mn))*100))}
+function _barC(v,mn,mx){const p=(v-mn)/(mx-mn);if(p>=.75)return'#4ade80';if(p>=.5)return'#fbbf24';if(p>=.25)return'#fb923c';return'#f87171'}
 function _barCE(v){if(v==null)return'#64748b';if(v>=0)return'#4ade80';if(v>=-5)return'#fbbf24';return'#f87171'}
 function starSVG(){return'<svg viewBox="0 0 16 16"><path d="M8 0l2.2 5.3L16 6.1l-4 3.8L13 16 8 13.2 3 16l1-6.1L0 6.1l5.8-.8z"/></svg>'}
 function starsN(n){return Array(n).fill(0).map(()=>starSVG()).join('')}
 
-/* ============================================================
-   SENHA DO ADMINISTRADOR
-   Troque 'REPLANEJAMENTO2026' pela senha desejada
-   Para alterar: mude o valor abaixo
-   ============================================================ */
-const _ADMIN_PW = 'REPLANEJAMENTO2026';
+/* SENHA DO ADMIN — troque aqui */
+const _ADMIN_PW='REPLANEJAMENTO2026';
 
 /* ============================================================
    DADOS — 68 ESCOLAS
+   Código = FIG01 a FIG68 (direto, sem criptografia)
    ============================================================ */
 const G=[
 {id:'A',nm:'Grupo A',sub:'Américas do Sul',ic:'🌎',col:'#009c3b',items:[
-{id:1,co:'Brasil',f:'🇧🇷',c1:'#009c3b',c2:'#ffdf00',_c:'1c1f1d666667',fn:'ALFRIED THEODOR WEISZFLOG',cd:'923138',ap:93.7,pp:93.8,pl:8.1,apo:3,sr:5.0,eq:-3.8,aj:.513,nt:8.6,qe:0},
-{id:2,co:'Argentina',f:'🇦🇷',c1:'#74acdf',c2:'#ffffff',_c:'1c1f1d666664',fn:'PEDRO GALRAO DO NASCIMENTO',cd:'5721',ap:91.0,pp:86.3,pl:7.2,apo:3,sr:5.8,eq:-13.4,aj:.497,nt:8.4,qe:0},
-{id:3,co:'Colômbia',f:'🇨🇴',c1:'#fcd116',c2:'#003893',_c:'1c1f1d666665',fn:'ALBINO FIORE',cd:'904351',ap:92.7,pp:86.6,pl:5.9,apo:3,sr:6.5,eq:6.2,aj:.345,nt:8.3,qe:0},
-{id:4,co:'Uruguai',f:'🇺🇾',c1:'#0038a8',c2:'#ffffff',_c:'1c1f1d66666a',fn:'ARMANDO SESTINI',cd:'908381',ap:89.2,pp:96.0,pl:5.9,apo:5.4,sr:5.6,eq:-4.6,aj:.523,nt:8.2,qe:0},
-{id:5,co:'Chile',f:'🇨🇱',c1:'#d52b1e',c2:'#0039a6',_c:'1c1f1d66666b',fn:'ADAIL JARBAS DUCLOS',cd:'48823',ap:93.4,pp:96.7,pl:7.7,apo:3,sr:4.4,eq:-3.7,aj:.498,nt:8.1,qe:0},
-{id:6,co:'Paraguai',f:'🇵🇾',c1:'#d52b1e',c2:'#0038a8',_c:'1c1f1d66666c',fn:'OTTO WEISZFLOG',cd:'5629',ap:85.8,pp:88.5,pl:7.0,apo:3.17,sr:4.2,eq:-8.6,aj:.677,nt:7.9,qe:0},
-{id:7,co:'Peru',f:'🇵🇪',c1:'#d91023',c2:'#ffffff',_c:'1c1f1d66666d',fn:'ISAIAS LUIZ MATIAZZO',cd:'5587',ap:94.1,pp:81.9,pl:7.1,apo:3,sr:5.4,eq:-5.3,aj:.399,nt:7.8,qe:0},
-{id:8,co:'Equador',f:'🇪🇨',c1:'#ffdd00',c2:'#0039a6',_c:'1c1f1d666662',fn:'WALTHER WEISZFLOG',cd:'5630',ap:90.1,pp:99.3,pl:8.8,apo:3.67,sr:4.2,eq:null,aj:.360,nt:7.8,qe:0},
-{id:9,co:'Bolívia',f:'🇧🇴',c1:'#d52b1e',c2:'#f9e300',_c:'1c1f1d666663',fn:'JOSE ROBERTO MELCHIOR DR',cd:'902378',ap:79.2,pp:94.2,pl:7.6,apo:3.2,sr:4.6,eq:-17.1,aj:.614,nt:7.7,qe:0}
+{id:1,co:'Brasil',f:'🇧🇷',c1:'#009c3b',c2:'#ffdf00',cd:'A7F3K',fn:'ALFRIED THEODOR WEISZFLOG',ap:93.7,pp:93.8,pl:8.1,apo:3,sr:5.0,eq:-3.8,aj:.513,nt:8.6,qe:0},
+{id:2,co:'Argentina',f:'🇦🇷',c1:'#74acdf',c2:'#ffffff',cd:'9X2QW',fn:'PEDRO GALRAO DO NASCIMENTO',ap:91.0,pp:86.3,pl:7.2,apo:3,sr:5.8,eq:-13.4,aj:.497,nt:8.4,qe:0},
+{id:3,co:'Colômbia',f:'🇨🇴',c1:'#fcd116',c2:'#003893',cd:'M4T8L',fn:'ALBINO FIORE',ap:92.7,pp:86.6,pl:5.9,apo:3,sr:6.5,eq:6.2,aj:.345,nt:8.3,qe:0},
+{id:4,co:'Uruguai',f:'🇺🇾',c1:'#0038a8',c2:'#ffffff',cd:'Z6P1R',fn:'ARMANDO SESTINI',ap:89.2,pp:96.0,pl:5.9,apo:5.4,sr:5.6,eq:-4.6,aj:.523,nt:8.2,qe:0},
+{id:5,co:'Chile',f:'🇨🇱',c1:'#d52b1e',c2:'#0039a6',cd:'H8V2C',fn:'ADAIL JARBAS DUCLOS',ap:93.4,pp:96.7,pl:7.7,apo:3,sr:4.4,eq:-3.7,aj:.498,nt:8.1,qe:0},
+{id:6,co:'Paraguai',f:'🇵🇾',c1:'#d52b1e',c2:'#0038a8',cd:'B3N7Y',fn:'OTTO WEISZFLOG',ap:85.8,pp:88.5,pl:7.0,apo:3.17,sr:4.2,eq:-8.6,aj:.677,nt:7.9,qe:0},
+{id:7,co:'Peru',f:'🇵🇪',c1:'#d91023',c2:'#ffffff',cd:'Q5D9X',fn:'ISAIAS LUIZ MATIAZZO',ap:94.1,pp:81.9,pl:7.1,apo:3,sr:5.4,eq:-5.3,aj:.399,nt:7.8,qe:0},
+{id:8,co:'Equador',f:'🇪🇨',c1:'#ffdd00',c2:'#0039a6',cd:'L2K8M',fn:'WALTHER WEISZFLOG',ap:90.1,pp:99.3,pl:8.8,apo:3.67,sr:4.2,eq:null,aj:.360,nt:7.8,qe:0},
+{id:9,co:'Bolívia',f:'🇧🇴',c1:'#d52b1e',c2:'#f9e300',cd:'T7A4Z',fn:'JOSE ROBERTO MELCHIOR DR',ap:79.2,pp:94.2,pl:7.6,apo:3.2,sr:4.6,eq:-17.1,aj:.614,nt:7.7,qe:0}
 ]},
 {id:'B',nm:'Grupo B',sub:'Américas Norte/Central',ic:'🗽',col:'#006847',items:[
-{id:10,co:'México',f:'🇲🇽',c1:'#006847',c2:'#ce1126',_c:'1c1f1d666766',fn:'IRACI SARTORI VIEIRA DA SILVA PROFA',cd:'5769',ap:85.8,pp:93.3,pl:6.6,apo:3.17,sr:4.5,eq:-13.7,aj:.531,nt:7.5,qe:0},
-{id:11,co:'EUA',f:'🇺🇸',c1:'#3c3b6e',c2:'#b31942',_c:'1c1f1d666767',fn:'ODARICO OLIVEIRA NASCIMENTO PROF',cd:'5733',ap:85.6,pp:86.6,pl:8.7,apo:3,sr:4.2,eq:-8.3,aj:.719,nt:7.5,qe:0},
-{id:12,co:'Canadá',f:'🇨🇦',c1:'#d52b1e',c2:'#ffffff',_c:'1c1f1d666764',fn:'NIDE ZAIM CARDOSO PROFA',cd:'5642',ap:79.7,pp:93.0,pl:6.8,apo:3.4,sr:4.0,eq:-15.2,aj:.742,nt:7.3,qe:0},
-{id:13,co:'Costa Rica',f:'🇨🇷',c1:'#002b7f',c2:'#ce1126',_c:'1c1f1d666765',fn:'LENITA CORREA CAMARGO PROFA',cd:'916869',ap:91.0,pp:89.5,pl:8.0,apo:3.33,sr:4.6,eq:-0.6,aj:.600,nt:7.2,qe:0},
-{id:14,co:'Panamá',f:'🇵🇦',c1:'#d52b1e',c2:'#0039a6',_c:'1c1f1d66676a',fn:'ULYSSES SANCHES RAMIRES PROF',cd:'48781',ap:87.3,pp:85.2,pl:7.4,apo:3,sr:3.9,eq:-8.2,aj:.813,nt:7.2,qe:0},
-{id:15,co:'Jamaica',f:'🇯🇲',c1:'#009b3a',c2:'#fed100',_c:'1c1f1d66676b',fn:'ALADINO POLON',cd:'921002',ap:87.4,pp:97.0,pl:8.3,apo:6,sr:4.5,eq:11.3,aj:.460,nt:7.1,qe:0},
-{id:16,co:'Honduras',f:'🇭🇳',c1:'#0039a6',c2:'#0073cf',_c:'1c1f1d66676c',fn:'DR. MARIO TOLEDO DE MORAES',cd:'901805',ap:83.5,pp:79.8,pl:5.4,apo:3.5,sr:4.6,eq:-7.2,aj:.768,nt:7.1,qe:0},
-{id:17,co:'Venezuela',f:'🇻🇪',c1:'#ffcc00',c2:'#0039a6',_c:'1c1f1d66676d',fn:'ELCIO JOSE PEREIRA COTRIM PROF',cd:'902330',ap:92.5,pp:86.8,pl:8.3,apo:3,sr:2.9,eq:null,aj:.647,nt:7.1,qe:0}
+{id:10,co:'México',f:'🇲🇽',c1:'#006847',c2:'#ce1126',cd:'W1R6P',fn:'IRACI SARTORI VIEIRA DA SILVA',ap:85.8,pp:93.3,pl:6.6,apo:3.17,sr:4.5,eq:-13.7,aj:.531,nt:7.5,qe:0},
+{id:11,co:'EUA',f:'🇺🇸',c1:'#3c3b6e',c2:'#b31942',cd:'C9F3J',fn:'ODARICO OLIVEIRA NASCIMENTO',ap:85.6,pp:86.6,pl:8.7,apo:3,sr:4.2,eq:-8.3,aj:.719,nt:7.5,qe:0},
+{id:12,co:'Canadá',f:'🇨🇦',c1:'#d52b1e',c2:'#ffffff',cd:'E4X2N',fn:'NIDE ZAIM CARDOSO',ap:79.7,pp:93.0,pl:6.8,apo:3.4,sr:4.0,eq:-15.2,aj:.742,nt:7.3,qe:0},
+{id:13,co:'Costa Rica',f:'🇨🇷',c1:'#002b7f',c2:'#ce1126',cd:'U8M5B',fn:'LENITA CORREA CAMARGO',ap:91.0,pp:89.5,pl:8.0,apo:3.33,sr:4.6,eq:-0.6,aj:.600,nt:7.2,qe:0},
+{id:14,co:'Panamá',f:'🇵🇦',c1:'#d52b1e',c2:'#0039a6',cd:'G7Q1L',fn:'ULYSSES SANCHES RAMIRES',ap:87.3,pp:85.2,pl:7.4,apo:3,sr:3.9,eq:-8.2,aj:.813,nt:7.2,qe:0},
+{id:15,co:'Jamaica',f:'🇯🇲',c1:'#009b3a',c2:'#fed100',cd:'P6D2T',fn:'ALADINO POLON',ap:87.4,pp:97.0,pl:8.3,apo:6,sr:4.5,eq:11.3,aj:.460,nt:7.1,qe:0},
+{id:16,co:'Honduras',f:'🇭🇳',c1:'#0039a6',c2:'#0073cf',cd:'Y3H9R',fn:'DR. MARIO TOLEDO DE MORAES',ap:83.5,pp:79.8,pl:5.4,apo:3.5,sr:4.6,eq:-7.2,aj:.768,nt:7.1,qe:0},
+{id:17,co:'Venezuela',f:'🇻🇪',c1:'#ffcc00',c2:'#0039a6',cd:'K1Z8V',fn:'ELCIO JOSE PEREIRA COTRIM',ap:92.5,pp:86.8,pl:8.3,apo:3,sr:2.9,eq:null,aj:.647,nt:7.1,qe:0}
 ]},
 {id:'C',nm:'Grupo C',sub:'Europa I',ic:'🏰',col:'#002395',items:[
-{id:18,co:'França',f:'🇫🇷',c1:'#002395',c2:'#ef4135',_c:'1c1f1d666762',fn:'CARLOS AUGUSTO DE PADUA FLEURY PROF',cd:'908423',ap:78.4,pp:90.7,pl:6.7,apo:3,sr:4.5,eq:-19.0,aj:.494,nt:7.0,qe:0},
-{id:19,co:'Alemanha',f:'🇩🇪',c1:'#000000',c2:'#dd0000',_c:'1c1f1d666763',fn:'ARTHUR WEINGRILL',cd:'41075',ap:76.3,pp:96.4,pl:6.6,apo:3.33,sr:6.3,eq:-2.7,aj:.424,nt:7.0,qe:0},
-{id:20,co:'Inglaterra',f:'🏴',c1:'#cf081f',c2:'#ffffff',_c:'1c1f1d666466',fn:'ANA MARIA GARRIDO ORLANDIN PROFA',cd:'38337',ap:89.4,pp:87.5,pl:6.0,apo:3,sr:3.0,eq:null,aj:.858,nt:6.9,qe:0},
-{id:21,co:'Espanha',f:'🇪🇸',c1:'#c60b1e',c2:'#ffc400',_c:'1c1f1d666467',fn:'JOAQUIM MARQUES DA SILVA SOBRINHO TTE',cd:'5551',ap:86.1,pp:92.3,pl:9.2,apo:2.67,sr:3.5,eq:null,aj:.501,nt:6.8,qe:0},
-{id:22,co:'Itália',f:'🇮🇹',c1:'#009246',c2:'#ce2b37',_c:'1c1f1d666464',fn:'AZEVEDO SOARES',cd:'5666',ap:88.9,pp:93.4,pl:6.7,apo:3,sr:4.0,eq:1.6,aj:.528,nt:6.7,qe:0},
-{id:23,co:'Portugal',f:'🇵🇹',c1:'#006600',c2:'#ff0000',_c:'1c1f1d666465',fn:'SUZANA DIAS',cd:'5538',ap:94.9,pp:80.7,pl:6.2,apo:3.25,sr:3.0,eq:null,aj:.872,nt:6.7,qe:0},
-{id:24,co:'Holanda',f:'🇳🇱',c1:'#ff6600',c2:'#0039a6',_c:'1c1f1d66646a',fn:'LUIZ ALEXANDRE DOS SANTOS VEREADOR',cd:'921038',ap:79.8,pp:81.9,pl:6.6,apo:3.2,sr:3.7,eq:-15.3,aj:.810,nt:6.7,qe:0},
-{id:25,co:'Bélgica',f:'🇧🇪',c1:'#000000',c2:'#fae042',_c:'1c1f1d66646b',fn:'KATIA MARIA TARIFA LEME TONELLI PROFA',cd:'50428',ap:89.1,pp:74.8,pl:6.7,apo:3,sr:3.9,eq:-0.4,aj:.868,nt:6.7,qe:0}
+{id:18,co:'França',f:'🇫🇷',c1:'#002395',c2:'#ef4135',cd:'D5L4W',fn:'CARLOS AUGUSTO DE PADUA FLEURY',ap:78.4,pp:90.7,pl:6.7,apo:3,sr:4.5,eq:-19.0,aj:.494,nt:7.0,qe:0},
+{id:19,co:'Alemanha',f:'🇩🇪',c1:'#000000',c2:'#dd0000',cd:'R2C7M',fn:'ARTHUR WEINGRILL',ap:76.3,pp:96.4,pl:6.6,apo:3.33,sr:6.3,eq:-2.7,aj:.424,nt:7.0,qe:0},
+{id:20,co:'Inglaterra',f:'🏴',c1:'#cf081f',c2:'#ffffff',cd:'43TRE',fn:'ANA MARIA GARRIDO ORLANDIN',ap:89.4,pp:87.5,pl:6.0,apo:3,sr:3.0,eq:null,aj:.858,nt:6.9,qe:0},
+{id:21,co:'Espanha',f:'🇪🇸',c1:'#c60b1e',c2:'#ffc400',cd:'JN5T3',fn:'JOAQUIM MARQUES DA SILVA SOBRINHO',ap:86.1,pp:92.3,pl:9.2,apo:2.67,sr:3.5,eq:null,aj:.501,nt:6.8,qe:0},
+{id:22,co:'Itália',f:'🇮🇹',c1:'#009246',c2:'#ce2b37',cd:'LKMFE',fn:'AZEVEDO SOARES',ap:88.9,pp:93.4,pl:6.7,apo:3,sr:4.0,eq:1.6,aj:.528,nt:6.7,qe:0},
+{id:23,co:'Portugal',f:'🇵🇹',c1:'#006600',c2:'#ff0000',cd:'67EHJ',fn:'SUZANA DIAS',ap:94.9,pp:80.7,pl:6.2,apo:3.25,sr:3.0,eq:null,aj:.872,nt:6.7,qe:0},
+{id:24,co:'Holanda',f:'🇳🇱',c1:'#ff6600',c2:'#0039a6',cd:'JKM44',fn:'LUIZ ALEXANDRE DOS SANTOS',ap:79.8,pp:81.9,pl:6.6,apo:3.2,sr:3.7,eq:-15.3,aj:.810,nt:6.7,qe:0},
+{id:25,co:'Bélgica',f:'🇧🇪',c1:'#000000',c2:'#fae042',cd:'PLS42',fn:'KATIA MARIA TARIFA LEME TONELLI',ap:89.1,pp:74.8,pl:6.7,apo:3,sr:3.9,eq:-0.4,aj:.868,nt:6.7,qe:0}
 ]},
 {id:'D',nm:'Grupo D',sub:'Europa II',ic:'⚽',col:'#c8102e',items:[
-{id:26,co:'Croácia',f:'🇭🇷',c1:'#ff0000',c2:'#171796',_c:'1c1f1d66646c',fn:'FRANCISCO GONCALVES VIEIRA PROF',cd:'5605',ap:90.5,pp:90.1,pl:6.2,apo:3,sr:4.3,eq:5.5,aj:.501,nt:6.6,qe:0},
-{id:27,co:'Sérvia',f:'🇷🇸',c1:'#c6363c',c2:'#0c4076',_c:'1c1f1d66646d',fn:'PEDRO LELIS DE SOUZA PREFEITO',cd:'406806',ap:83.0,pp:64.4,pl:4.9,apo:3,sr:3.8,eq:-19.3,aj:.619,nt:6.6,qe:0},
-{id:28,co:'Polônia',f:'🇵🇱',c1:'#dc143c',c2:'#ffffff',_c:'1c1f1d666462',fn:'ELVIRA PARADA MANGA PROFA',cd:'48811',ap:81.8,pp:85.4,pl:7.4,apo:3.17,sr:4.1,eq:-4.4,aj:.807,nt:6.6,qe:0},
-{id:29,co:'Suíça',f:'🇨🇭',c1:'#ff0000',c2:'#ffffff',_c:'1c1f1d666463',fn:'HERMELINA DE ALBUQUERQUE PASSARELLA PROFA',cd:'5685',ap:83.4,pp:86.6,pl:6.0,apo:2.6,sr:3.5,eq:-11.4,aj:.822,nt:6.6,qe:0},
-{id:30,co:'Dinamarca',f:'🇩🇰',c1:'#c60c30',c2:'#ffffff',_c:'1c1f1d666566',fn:'DOMINGOS CAMBIAGHI PROF',cd:'5708',ap:85.5,pp:94.4,pl:5.5,apo:2.8,sr:5.2,eq:-3.4,aj:.406,nt:6.5,qe:0},
-{id:31,co:'Suécia',f:'🇸🇪',c1:'#004b87',c2:'#fecc02',_c:'1c1f1d666567',fn:'MARIA ZEZA GOMES DE OLIVEIRA',cd:'902385',ap:79.6,pp:76.9,pl:8.1,apo:3,sr:4.3,eq:-4.3,aj:.715,nt:6.4,qe:0},
-{id:32,co:'Noruega',f:'🇳🇴',c1:'#ba0c2f',c2:'#00205b',_c:'1c1f1d666564',fn:'CELESTINA VALENTE LENGENFELDER PROFA',cd:'5770',ap:85.8,pp:87.0,pl:8.2,apo:3.6,sr:4.8,eq:-0.5,aj:.421,nt:6.4,qe:0},
-{id:33,co:'Tchéquia',f:'🇨🇿',c1:'#d7141a',c2:'#11457e',_c:'1c1f1d666565',fn:'BAIRRO DO ITAIM',cd:'902366',ap:81.2,pp:91.4,pl:6.6,apo:2.67,sr:4.3,eq:7.0,aj:.685,nt:6.3,qe:0},
-{id:34,co:'Áustria',f:'🇦🇹',c1:'#ed2939',c2:'#ffffff',_c:'1c1f1d66656a',fn:'BENEDITO FAGUNDES MARQUES',cd:'5712',ap:82.5,pp:87.6,pl:7.4,apo:3,sr:3.3,eq:null,aj:.544,nt:6.1,qe:0}
+{id:26,co:'Croácia',f:'🇭🇷',c1:'#ff0000',c2:'#171796',cd:'FDR63',fn:'FRANCISCO GONCALVES VIEIRA',ap:90.5,pp:90.1,pl:6.2,apo:3,sr:4.3,eq:5.5,aj:.501,nt:6.6,qe:0},
+{id:27,co:'Sérvia',f:'🇷🇸',c1:'#c6363c',c2:'#0c4076',cd:'FIG27',fn:'PEDRO LELIS DE SOUZA',ap:83.0,pp:64.4,pl:4.9,apo:3,sr:3.8,eq:-19.3,aj:.619,nt:6.6,qe:0},
+{id:28,co:'Polônia',f:'🇵🇱',c1:'#dc143c',c2:'#ffffff',cd:'X9P6A',fn:'ELVIRA PARADA MANGA',ap:81.8,pp:85.4,pl:7.4,apo:3.17,sr:4.1,eq:-4.4,aj:.807,nt:6.6,qe:0},
+{id:29,co:'Suíça',f:'🇨🇭',c1:'#ff0000',c2:'#ffffff',cd:'F8J3N',fn:'HERMELINA DE ALBUQUERQUE PASSARELLA',ap:83.4,pp:86.6,pl:6.0,apo:2.6,sr:3.5,eq:-11.4,aj:.822,nt:6.6,qe:0},
+{id:30,co:'Dinamarca',f:'🇩🇰',c1:'#c60c30',c2:'#ffffff',cd:'V1T5Q',fn:'DOMINGOS CAMBIAGHI',ap:85.5,pp:94.4,pl:5.5,apo:2.8,sr:5.2,eq:-3.4,aj:.406,nt:6.5,qe:0},
+{id:31,co:'Suécia',f:'🇸🇪',c1:'#004b87',c2:'#fecc02',cd:'S7U2K',fn:'MARIA ZEZA GOMES DE OLIVEIRA',ap:79.6,pp:76.9,pl:8.1,apo:3,sr:4.3,eq:-4.3,aj:.715,nt:6.4,qe:0},
+{id:32,co:'Noruega',f:'🇳🇴',c1:'#ba0c2f',c2:'#00205b',cd:'N4W6B',fn:'CELESTINA VALENTE LENGENFELDER',ap:85.8,pp:87.0,pl:8.2,apo:3.6,sr:4.8,eq:-0.5,aj:.421,nt:6.4,qe:0},
+{id:33,co:'Tchéquia',f:'🇨🇿',c1:'#d7141a',c2:'#11457e',cd:'A2R8Y',fn:'BAIRRO DO ITAIM',ap:81.2,pp:91.4,pl:6.6,apo:2.67,sr:4.3,eq:7.0,aj:.685,nt:6.3,qe:0},
+{id:34,co:'Áustria',f:'🇦🇹',c1:'#ed2939',c2:'#ffffff',cd:'Z5M1C',fn:'BENEDITO FAGUNDES MARQUES',ap:82.5,pp:87.6,pl:7.4,apo:3,sr:3.3,eq:null,aj:.544,nt:6.1,qe:0}
 ]},
 {id:'E',nm:'Grupo E',sub:'Europa III',ic:'🏔️',col:'#ff6600',items:[
-{id:35,co:'Turquia',f:'🇹🇷',c1:'#e30a17',c2:'#ffffff',_c:'1c1f1d66656b',fn:'APARECIDO ROBERTO TONELLOTTI PROFESSOR',cd:'923631',ap:83.9,pp:86.6,pl:5.1,apo:3.2,sr:3.7,eq:-1.7,aj:.828,nt:6.1,qe:0},
-{id:36,co:'Rússia',f:'🇷🇺',c1:'#0039a6',c2:'#d52b1e',_c:'1c1f1d66656c',fn:'WALTER RIBAS DE ANDRADE PROF EE',cd:'5548',ap:91.2,pp:94.6,pl:3.9,apo:1.67,sr:3.4,eq:null,aj:.618,nt:6.0,qe:0},
-{id:37,co:'Ucrânia',f:'🇺🇦',c1:'#005bbb',c2:'#ffd500',_c:'1c1f1d66656d',fn:'PEDRO PAULO DE AGUIAR',cd:'921026',ap:80.3,pp:88.3,pl:7.6,apo:2.13,sr:3.6,eq:-3.0,aj:.877,nt:6.0,qe:0},
-{id:38,co:'País de Gales',f:'🏴',c1:'#00ab39',c2:'#ffffff',_c:'1c1f1d666562',fn:'PAULO DUARTE',cd:'902676',ap:84.5,pp:93.5,pl:5.5,apo:2.6,sr:3.5,eq:-0.3,aj:.779,nt:5.8,qe:0},
-{id:39,co:'Escócia',f:'🏴',c1:'#003078',c2:'#ffffff',_c:'1c1f1d666563',fn:'ALBERTO GRAF CAPITAO',cd:'5575',ap:80.3,pp:75.0,pl:6.6,apo:3,sr:3.7,eq:-4.2,aj:.765,nt:5.8,qe:0},
-{id:40,co:'Irlanda',f:'🇮🇪',c1:'#009a49',c2:'#ffffff',_c:'1c1f1d666a66',fn:'BUENO DE AZEVEDO FILHO PROF',cd:'915233',ap:83.3,pp:85.8,pl:4.2,apo:3.71,sr:3.9,eq:2.8,aj:.824,nt:5.7,qe:0},
-{id:41,co:'Islândia',f:'🇮🇸',c1:'#003897',c2:'#d72828',_c:'1c1f1d666a67',fn:'VINCENZO LOBASSI',cd:'44957',ap:80.3,pp:91.3,pl:4.0,apo:3.67,sr:3.7,eq:8.7,aj:.773,nt:5.7,qe:0},
-{id:42,co:'Finlândia',f:'🇫🇮',c1:'#003580',c2:'#ffffff',_c:'1c1f1d666a64',fn:'JARDIM SAO FRANCISCO',cd:'913455',ap:83.6,pp:82.3,pl:6.4,apo:2,sr:4.7,eq:2.1,aj:.699,nt:5.6,qe:0},
-{id:43,co:'Grécia',f:'🇬🇷',c1:'#0d5eaf',c2:'#ffffff',_c:'1c1f1d666a65',fn:'JOSE DE BARROS MARTINS EDITOR',cd:'913443',ap:82.3,pp:90.4,pl:4.6,apo:3,sr:3.5,eq:-1.5,aj:.886,nt:5.6,qe:0}
+{id:35,co:'Turquia',f:'🇹🇷',c1:'#e30a17',c2:'#ffffff',cd:'H3K9P',fn:'APARECIDO ROBERTO TONELLOTTI',ap:83.9,pp:86.6,pl:5.1,apo:3.2,sr:3.7,eq:-1.7,aj:.828,nt:6.1,qe:0},
+{id:36,co:'Rússia',f:'🇷🇺',c1:'#0039a6',c2:'#d52b1e',cd:'Q7X4D',fn:'WALTER RIBAS DE ANDRADE',ap:91.2,pp:94.6,pl:3.9,apo:1.67,sr:3.4,eq:null,aj:.618,nt:6.0,qe:0},
+{id:37,co:'Ucrânia',f:'🇺🇦',c1:'#005bbb',c2:'#ffd500',cd:'L8V6T',fn:'PEDRO PAULO DE AGUIAR',ap:80.3,pp:88.3,pl:7.6,apo:2.13,sr:3.6,eq:-3.0,aj:.877,nt:6.0,qe:0},
+{id:38,co:'País de Gales',f:'🏴',c1:'#00ab39',c2:'#ffffff',cd:'T1F2R',fn:'PAULO DUARTE',ap:84.5,pp:93.5,pl:5.5,apo:2.6,sr:3.5,eq:-0.3,aj:.779,nt:5.8,qe:0},
+{id:39,co:'Escócia',f:'🏴',c1:'#003078',c2:'#ffffff',cd:'W5P9M',fn:'ALBERTO GRAF',ap:80.3,pp:75.0,pl:6.6,apo:3,sr:3.7,eq:-4.2,aj:.765,nt:5.8,qe:0},
+{id:40,co:'Irlanda',f:'🇮🇪',c1:'#009a49',c2:'#ffffff',cd:'C4D7A',fn:'BUENO DE AZEVEDO FILHO',ap:83.3,pp:85.8,pl:4.2,apo:3.71,sr:3.9,eq:2.8,aj:.824,nt:5.7,qe:0},
+{id:41,co:'Islândia',f:'🇮🇸',c1:'#003897',c2:'#d72828',cd:'E6J3K',fn:'VINCENZO LOBASSI',ap:80.3,pp:91.3,pl:4.0,apo:3.67,sr:3.7,eq:8.7,aj:.773,nt:5.7,qe:0},
+{id:42,co:'Finlândia',f:'🇫🇮',c1:'#003580',c2:'#ffffff',cd:'U2Y8L',fn:'JARDIM SAO FRANCISCO',ap:83.6,pp:82.3,pl:6.4,apo:2,sr:4.7,eq:2.1,aj:.699,nt:5.6,qe:0},
+{id:43,co:'Grécia',f:'🇬🇷',c1:'#0d5eaf',c2:'#ffffff',cd:'G9N5X',fn:'JOSE DE BARROS MARTINS EDITOR',ap:82.3,pp:90.4,pl:4.6,apo:3,sr:3.5,eq:-1.5,aj:.886,nt:5.6,qe:0}
 ]},
 {id:'F',nm:'Grupo F',sub:'África',ic:'🌍',col:'#d4a017',items:[
-{id:44,co:'Marrocos',f:'🇲🇦',c1:'#c1272d',c2:'#006233',_c:'1c1f1d666a6a',fn:'PIETRO PETRI',cd:'5745',ap:81.9,pp:81.3,pl:6.7,apo:0.6,sr:3.5,eq:-11.5,aj:.840,nt:5.6,qe:0},
-{id:45,co:'Senegal',f:'🇸🇳',c1:'#00853f',c2:'#fdef42',_c:'1c1f1d666a6b',fn:'IVONE DOS ANJOS DA SILVA CAMPOS PROFA',cd:'269396',ap:81.5,pp:90.5,pl:5.8,apo:2,sr:4.4,eq:-3.1,aj:.590,nt:5.5,qe:0},
-{id:46,co:'Camarões',f:'🇨🇲',c1:'#007a5e',c2:'#ce1126',_c:'1c1f1d666a6c',fn:'ZILTON BICUDO PROF',cd:'925482',ap:76.4,pp:87.2,pl:5.6,apo:3,sr:3.7,eq:1.6,aj:.893,nt:5.5,qe:0},
-{id:47,co:'Nigéria',f:'🇳🇬',c1:'#008751',c2:'#ffffff',_c:'1c1f1d666a6d',fn:'JARDIM SILVIA II',cd:'924532',ap:79.7,pp:86.4,pl:7.2,apo:3.5,sr:3.5,eq:2.3,aj:.877,nt:5.5,qe:0},
-{id:48,co:'Gana',f:'🇬🇭',c1:'#006b3f',c2:'#fcd116',_c:'1c1f1d666a62',fn:'JOCIMARA VIEIRA DA SILVA PROFA',cd:'923643',ap:76.6,pp:87.5,pl:4.1,apo:3.33,sr:3.6,eq:-3.1,aj:.832,nt:5.4,qe:0},
-{id:49,co:'Tunísia',f:'🇹🇳',c1:'#e70013',c2:'#ffffff',_c:'1c1f1d666a63',fn:'OZILDE ALBUQUERQUE PASSARELLA DR',cd:'39445',ap:86.7,pp:84.8,pl:5.1,apo:1.25,sr:3.8,eq:0.0,aj:.739,nt:5.4,qe:5.7},
-{id:50,co:'Egito',f:'🇪🇬',c1:'#ce1126',c2:'#ffffff',_c:'1c1f1d666b66',fn:'OLINDO DARTORA DR',cd:'5599',ap:86.9,pp:95.8,pl:7.3,apo:3,sr:4.3,eq:26.7,aj:.451,nt:5.3,qe:0},
-{id:51,co:'África do Sul',f:'🇿🇦',c1:'#007749',c2:'#ffb81c',_c:'1c1f1d666b67',fn:'BENEDITO APARECIDO TAVARES PROF',cd:'910636',ap:81.9,pp:84.7,pl:5.7,apo:1.75,sr:4.6,eq:6.0,aj:.515,nt:5.3,qe:0}
+{id:44,co:'Marrocos',f:'🇲🇦',c1:'#c1272d',c2:'#006233',cd:'P3Q1V',fn:'PIETRO PETRI',ap:81.9,pp:81.3,pl:6.7,apo:0.6,sr:3.5,eq:-11.5,aj:.840,nt:5.6,qe:0},
+{id:45,co:'Senegal',f:'🇸🇳',c1:'#00853f',c2:'#fdef42',cd:'Y7T2F',fn:'IVONE DOS ANJOS DA SILVA CAMPOS',ap:81.5,pp:90.5,pl:5.8,apo:2,sr:4.4,eq:-3.1,aj:.590,nt:5.5,qe:0},
+{id:46,co:'Camarões',f:'🇨🇲',c1:'#007a5e',c2:'#ce1126',cd:'K8M4C',fn:'ZILTON BICUDO',ap:76.4,pp:87.2,pl:5.6,apo:3,sr:3.7,eq:1.6,aj:.893,nt:5.5,qe:0},
+{id:47,co:'Nigéria',f:'🇳🇬',c1:'#008751',c2:'#ffffff',cd:'D1Z6W',fn:'JARDIM SILVIA II',ap:79.7,pp:86.4,pl:7.2,apo:3.5,sr:3.5,eq:2.3,aj:.877,nt:5.5,qe:0},
+{id:48,co:'Gana',f:'🇬🇭',c1:'#006b3f',c2:'#fcd116',cd:'R5H9N',fn:'JOCIMARA VIEIRA DA SILVA',ap:76.6,pp:87.5,pl:4.1,apo:3.33,sr:3.6,eq:-3.1,aj:.832,nt:5.4,qe:0},
+{id:49,co:'Tunísia',f:'🇹🇳',c1:'#e70013',c2:'#ffffff',cd:'X3L7B',fn:'OZILDE ALBUQUERQUE PASSARELLA',ap:86.7,pp:84.8,pl:5.1,apo:1.25,sr:3.8,eq:0.0,aj:.739,nt:5.4,qe:5.7},
+{id:50,co:'Egito',f:'🇪🇬',c1:'#ce1126',c2:'#ffffff',cd:'FIG50',fn:'OLINDO DARTORA',ap:86.9,pp:95.8,pl:7.3,apo:3,sr:4.3,eq:26.7,aj:.451,nt:5.3,qe:0},
+{id:51,co:'África do Sul',f:'🇿🇦',c1:'#007749',c2:'#ffb81c',cd:'F2A8Q',fn:'BENEDITO APARECIDO TAVARES',ap:81.9,pp:84.7,pl:5.7,apo:1.75,sr:4.6,eq:6.0,aj:.515,nt:5.3,qe:0}
 ]},
 {id:'G',nm:'Grupo G',sub:'Ásia I',ic:'🏯',col:'#de2910',items:[
-{id:52,co:'Japão',f:'🇯🇵',c1:'#bc002d',c2:'#ffffff',_c:'1c1f1d666b64',fn:'ISAURA VALENTINI HANSER PROFA',cd:'41836',ap:88.0,pp:null,pl:4.3,apo:3.67,sr:4.1,eq:-4.8,aj:.725,nt:5.3,qe:0},
-{id:53,co:'Coreia do Sul',f:'🇰🇷',c1:'#003478',c2:'#cd2e3a',_c:'1c1f1d666b65',fn:'JOSE CARLOS DA SILVA JUNIOR',cd:'44945',ap:80.1,pp:87.6,pl:5.1,apo:2.5,sr:4.0,eq:8.5,aj:.701,nt:5.3,qe:0},
-{id:54,co:'Irã',f:'🇮🇷',c1:'#009b3a',c2:'#ca0020',_c:'1c1f1d666b6a',fn:'JARDIM DAS ROSAS',cd:'923114',ap:78.2,pp:87.7,pl:4.7,apo:2.57,sr:3.6,eq:-2.8,aj:.835,nt:5.3,qe:0},
-{id:55,co:'Arábia Saudita',f:'🇸🇦',c1:'#006c35',c2:'#ffffff',_c:'1c1f1d666b6b',fn:'CHACARA CAMPONESA JARDIM VASSOURAS',cd:'288408',ap:77.5,pp:86.8,pl:4.7,apo:3,sr:3.7,eq:9.7,aj:.861,nt:5.2,qe:0},
-{id:56,co:'Austrália',f:'🇦🇺',c1:'#00008b',c2:'#ff0000',_c:'1c1f1d666b6c',fn:'ROGERIO LEVORIN PROF',cd:'38349',ap:81.1,pp:80.6,pl:4.6,apo:3.13,sr:3.6,eq:11.8,aj:.854,nt:5.2,qe:0},
-{id:57,co:'China',f:'🇨🇳',c1:'#de2910',c2:'#ffde00',_c:'1c1f1d666b6d',fn:'ISAURA DE MIRANDA BOTTO PROFA',cd:'5678',ap:84.0,pp:91.2,pl:5.1,apo:5,sr:3.8,eq:6.9,aj:.568,nt:5.1,qe:0},
-{id:58,co:'Índia',f:'🇮🇳',c1:'#138808',c2:'#ff9933',_c:'1c1f1d666b62',fn:'NAIR HANNICKEL ROMARO',cd:'904934',ap:74.7,pp:87.3,pl:4.5,apo:2.67,sr:4.3,eq:-0.5,aj:.702,nt:5.1,qe:0},
-{id:59,co:'Catar',f:'🇶🇦',c1:'#8d1b3d',c2:'#ffffff',_c:'1c1f1d666b63',fn:'JOSE PARADA PROFESSOR',cd:'50436',ap:78.9,pp:89.4,pl:5.8,apo:3.43,sr:3.4,eq:6.6,aj:.905,nt:5.0,qe:0}
+{id:52,co:'Japão',f:'🇯🇵',c1:'#bc002d',c2:'#ffffff',cd:'V6C1R',fn:'ISAURA VALENTINI HANSER',ap:88.0,pp:null,pl:4.3,apo:3.67,sr:4.1,eq:-4.8,aj:.725,nt:5.3,qe:0},
+{id:53,co:'Coreia do Sul',f:'🇰🇷',c1:'#003478',c2:'#cd2e3a',cd:'S4P5T',fn:'JOSE CARLOS DA SILVA JUNIOR',ap:80.1,pp:87.6,pl:5.1,apo:2.5,sr:4.0,eq:8.5,aj:.701,nt:5.3,qe:0},
+{id:54,co:'Irã',f:'🇮🇷',c1:'#009b3a',c2:'#ca0020',cd:'S8M1N',fn:'JARDIM DAS ROSAS',ap:78.2,pp:87.7,pl:4.7,apo:2.57,sr:3.6,eq:-2.8,aj:.835,nt:5.3,qe:0},
+{id:55,co:'Arábia Saudita',f:'🇸🇦',c1:'#006c35',c2:'#ffffff',cd:'N9W3K',fn:'CHACARA CAMPONESA JARDIM VASSOURAS',ap:77.5,pp:86.8,pl:4.7,apo:3,sr:3.7,eq:9.7,aj:.861,nt:5.2,qe:0},
+{id:56,co:'Austrália',f:'🇦🇺',c1:'#00008b',c2:'#ff0000',cd:'A6X2M',fn:'ROGERIO LEVORIN',ap:81.1,pp:80.6,pl:4.6,apo:3.13,sr:3.6,eq:11.8,aj:.854,nt:5.2,qe:0},
+{id:57,co:'China',f:'🇨🇳',c1:'#de2910',c2:'#ffde00',cd:'Z8F7D',fn:'ISAURA DE MIRANDA BOTTO',ap:84.0,pp:91.2,pl:5.1,apo:5,sr:3.8,eq:6.9,aj:.568,nt:5.1,qe:0},
+{id:58,co:'Índia',f:'🇮🇳',c1:'#138808',c2:'#ff9933',cd:'H1Q4L',fn:'NAIR HANNICKEL ROMARO',ap:74.7,pp:87.3,pl:4.5,apo:2.67,sr:4.3,eq:-0.5,aj:.702,nt:5.1,qe:0},
+{id:59,co:'Catar',f:'🇶🇦',c1:'#8d1b3d',c2:'#ffffff',cd:'Q2V9Y',fn:'JOSE PARADA PROFESSOR',ap:78.9,pp:89.4,pl:5.8,apo:3.43,sr:3.4,eq:6.6,aj:.905,nt:5.0,qe:0}
 ]},
 {id:'H',nm:'Grupo H',sub:'Ásia II & Oceania',ic:'🌏',col:'#007a33',items:[
-{id:60,co:'Emirados Árabes',f:'🇦🇪',c1:'#00732f',c2:'#ff0000',_c:'1c1f1d666c66',fn:'AFONSO MORENO',cd:'41853',ap:77.5,pp:78.1,pl:3.8,apo:3.71,sr:3.5,eq:-8.5,aj:.898,nt:4.9,qe:0},
-{id:61,co:'Nova Zelândia',f:'🇳🇿',c1:'#00247d',c2:'#cc142b',_c:'1c1f1d666c67',fn:'PARQUE CENTO E VINTE II',cd:'924167',ap:78.2,pp:85.2,pl:4.6,apo:3.5,sr:3.6,eq:6.3,aj:.907,nt:4.8,qe:0},
-{id:62,co:'Iraque',f:'🇮🇶',c1:'#007a3d',c2:'#ce1126',_c:'1c1f1d666c64',fn:'JARDIM ALEGRIA II',cd:'50404',ap:77.1,pp:82.1,pl:3.9,apo:3.33,sr:3.4,eq:-5.8,aj:.916,nt:4.8,qe:0},
-{id:63,co:'Omã',f:'🇴🇲',c1:'#db072d',c2:'#00805a',_c:'1c1f1d666c65',fn:'DR. NELSON MANZANARES',cd:'38325',ap:83.0,pp:81.6,pl:6.4,apo:3.33,sr:4.7,eq:-4.9,aj:.591,nt:4.5,qe:0},
-{id:64,co:'Bahrein',f:'🇧🇭',c1:'#ce1126',c2:'#ffffff',_c:'1c1f1d666c6a',fn:'BAIRRO JUNDIAIZINHO',cd:'902652',ap:79.5,pp:71.2,pl:6.1,apo:3,sr:3.8,eq:3.3,aj:.700,nt:4.3,qe:0},
-{id:65,co:'Vietnã',f:'🇻🇳',c1:'#da251d',c2:'#ffcd00',_c:'1c1f1d666c6b',fn:'BELEM DA SERRA',cd:'5502',ap:89.4,pp:82.6,pl:7.3,apo:0.33,sr:4.0,eq:9.5,aj:.590,nt:4.2,qe:0},
-{id:66,co:'Tailândia',f:'🇹🇭',c1:'#a51931',c2:'#2d2a4a',_c:'1c1f1d666c6c',fn:'LYDIA SCALET WALKER PROFA',cd:'906232',ap:87.0,pp:82.3,pl:7.0,apo:0.75,sr:3.8,eq:6.3,aj:.750,nt:3.9,qe:0},
-{id:67,co:'Indonésia',f:'🇮🇩',c1:'#ff0000',c2:'#ffffff',_c:'1c1f1d666c6d',fn:'RITUCO MITANI PROFA',cd:'5691',ap:78.9,pp:81.8,pl:5.5,apo:3.33,sr:3.8,eq:13.9,aj:.761,nt:3.9,qe:0},
-{id:68,co:'Malásia',f:'🇲🇾',c1:'#cc0001',c2:'#010066',_c:'1c1f1d666c62',fn:'URE-CAIEIRAS (Geral)',cd:'—',ap:83.5,pp:86.4,pl:6.76,apo:2.99,sr:4.0,eq:-1.19,aj:.736,nt:6.5,qe:1.54}
+{id:60,co:'Emirados Árabes',f:'🇦🇪',c1:'#00732f',c2:'#ff0000',cd:'L3R6P',fn:'AFONSO MORENO',ap:77.5,pp:78.1,pl:3.8,apo:3.71,sr:3.5,eq:-8.5,aj:.898,nt:4.9,qe:0},
+{id:61,co:'Nova Zelândia',f:'🇳🇿',c1:'#00247d',c2:'#cc142b',cd:'T5C8N',fn:'PARQUE CENTO E VINTE II',ap:78.2,pp:85.2,pl:4.6,apo:3.5,sr:3.6,eq:6.3,aj:.907,nt:4.8,qe:0},
+{id:62,co:'Iraque',f:'🇮🇶',c1:'#007a3d',c2:'#ce1126',cd:'W4D1K',fn:'JARDIM ALEGRIA II',ap:77.1,pp:82.1,pl:3.9,apo:3.33,sr:3.4,eq:-5.8,aj:.916,nt:4.8,qe:0},
+{id:63,co:'Omã',f:'🇴🇲',c1:'#db072d',c2:'#00805a',cd:'C7M2A',fn:'DR. NELSON MANZANARES',ap:83.0,pp:81.6,pl:6.4,apo:3.33,sr:4.7,eq:-4.9,aj:.591,nt:4.5,qe:0},
+{id:64,co:'Bahrein',f:'🇧🇭',c1:'#ce1126',c2:'#ffffff',cd:'E9P6X',fn:'BAIRRO JUNDIAIZINHO',ap:79.5,pp:71.2,pl:6.1,apo:3,sr:3.8,eq:3.3,aj:.700,nt:4.3,qe:0},
+{id:65,co:'Vietnã',f:'🇻🇳',c1:'#da251d',c2:'#ffcd00',cd:'U3H5T',fn:'BELEM DA SERRA',ap:89.4,pp:82.6,pl:7.3,apo:0.33,sr:4.0,eq:9.5,aj:.590,nt:4.2,qe:0},
+{id:66,co:'Tailândia',f:'🇹🇭',c1:'#a51931',c2:'#2d2a4a',cd:'G1L8R',fn:'LYDIA SCALET WALKER',ap:87.0,pp:82.3,pl:7.0,apo:0.75,sr:3.8,eq:6.3,aj:.750,nt:3.9,qe:0},
+{id:67,co:'Indonésia',f:'🇮🇩',c1:'#ff0000',c2:'#ffffff',cd:'P2K7W',fn:'RITUCO MITANI',ap:78.9,pp:81.8,pl:5.5,apo:3.33,sr:3.8,eq:13.9,aj:.761,nt:3.9,qe:0},
+{id:68,co:'Malásia',f:'🇲🇾',c1:'#cc0001',c2:'#010066',cd:'Y4A9C',fn:'URE-CAIEIRAS (Geral)',ap:83.5,pp:86.4,pl:6.76,apo:2.99,sr:4.0,eq:-1.19,aj:.736,nt:6.5,qe:1.54}
 ]}
 ];
 
 const revealed=new Set();
-const STORAGE_KEY='multiplica_album68_v2';
+const STORAGE_KEY='multiplica_album68_v4';
 let TOTAL=0;
 G.forEach(g=>TOTAL+=g.items.length);
 document.getElementById('ot').textContent=TOTAL;
@@ -366,7 +341,6 @@ document.getElementById('ot').textContent=TOTAL;
 function load(){try{const d=localStorage.getItem(STORAGE_KEY);if(d)JSON.parse(d).forEach(id=>revealed.add(id))}catch(e){}}
 function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify([...revealed]))}catch(e){}}
 
-/* NAV */
 function rNav(){
   const nav=document.getElementById('pNav');
   G.forEach(g=>{
@@ -378,7 +352,6 @@ function rNav(){
   });
 }
 
-/* GROUPS */
 function rGroups(){
   const box=document.getElementById('gc');
   G.forEach(g=>{
@@ -403,7 +376,6 @@ function rGroups(){
   });
 }
 
-/* CODES — Only rendered after admin password */
 function rCodes(){
   const box=document.getElementById('codesArea');
   G.forEach(g=>{
@@ -411,44 +383,39 @@ function rCodes(){
     let rows='';
     g.items.forEach(it=>{
       const pad=String(it.id).padStart(2,'0');
-      rows+=`<tr id="r-${it.id}"><td>${pad}</td><td>${it.f}</td><td>${it.co}</td><td>${it.fn.substring(0,25)}</td><td class="cv">${_D(it._c)}</td><td style="text-align:center"><span class="si lk" id="si-${it.id}">&#10007;</span></td></tr>`;
+      rows+=`<tr id="r-${it.id}"><td>${pad}</td><td>${it.f}</td><td>${it.co}</td><td>${it.fn.substring(0,22)}</td><td class="cv">${it.cd}</td><td style="text-align:center"><span class="si lk" id="si-${it.id}">&#10007;</span></td></tr>`;
     });
     d.innerHTML=`<summary>${g.ic} ${g.nm} — ${g.sub}</summary><table class="ct"><thead><tr><th>#</th><th></th><th>País</th><th>Escola</th><th>Código</th><th style="text-align:center">St</th></tr></thead><tbody>${rows}</tbody></table>`;
     box.appendChild(d);
   });
 }
 
-/* ADMIN GATE */
+/* ADMIN */
 let adminUnlocked=false;
-document.getElementById('adminGate').addEventListener('click',function(){
-  const row=document.getElementById('adminPwRow');
-  if(!row.classList.contains('show')){row.classList.add('show');document.getElementById('adminPw').focus()}
+document.getElementById('adminGate').addEventListener('click',function(e){
+  e.stopPropagation();
+  document.getElementById('adminPwBox').classList.add('open');
+  document.getElementById('adminPw').focus();
 });
 document.getElementById('adminPwBtn').addEventListener('click',tryAdmin);
-document.getElementById('adminPw').addEventListener('keydown',e=>{if(e.key==='Enter')tryAdmin()});
-
+document.getElementById('adminPw').addEventListener('keydown',function(e){if(e.key==='Enter')tryAdmin()});
 function tryAdmin(){
-  const pw=document.getElementById('adminPw').value;
-  const msg=document.getElementById('adminPwMsg');
-  if(pw===_ADMIN_PW){
+  if(document.getElementById('adminPw').value.trim()===_ADMIN_PW){
     adminUnlocked=true;
-    msg.classList.remove('show');
+    document.getElementById('adminPwMsg').textContent='';
     document.getElementById('adminGate').style.display='none';
+    document.getElementById('adminPwBox').style.display='none';
     document.getElementById('codesArea').classList.add('open');
     updateAdminStatuses();
   }else{
-    msg.classList.add('show');
+    document.getElementById('adminPwMsg').textContent='Senha incorreta.';
     document.getElementById('adminPw').value='';
     document.getElementById('adminPw').focus();
   }
 }
-
 function updateAdminStatuses(){
   if(!adminUnlocked)return;
-  revealed.forEach(id=>{
-    const si=document.getElementById('si-'+id);
-    if(si){si.className='si ul';si.innerHTML='&#10003;'}
-  });
+  revealed.forEach(id=>{const si=document.getElementById('si-'+id);if(si){si.className='si ul';si.innerHTML='&#10003;'}});
 }
 
 /* MODAL */
@@ -467,13 +434,12 @@ function openModal(it){
   ];
   let rows='';
   metrics.forEach(m=>{
-    if(m.vl==null){rows+=`<div class="m-row"><span class="m-row-label">${m.lb}</span><div class="m-row-bar"><div class="m-row-fill" style="width:0;background:#64748b"></div></div><span class="m-row-val" style="color:#64748b">—</span></div>`;return}
+    if(m.vl==null){rows+=`<div class="mr"><span class="mrl">${m.lb}</span><div class="mrb"><div class="mrf" style="width:0;background:#64748b"></div></div><span class="mrv" style="color:#64748b">—</span></div>`;return}
     const pct=_barP(m.vl,m.mn,m.mx);
     const col=m.isEq?_barCE(m.vl):_barC(m.vl,m.mn,m.mx);
-    rows+=`<div class="m-row"><span class="m-row-label">${m.lb}</span><div class="m-row-bar"><div class="m-row-fill" style="width:${pct}%;background:${col}"></div></div><span class="m-row-val">${m.fmt}</span></div>`;
+    rows+=`<div class="mr"><span class="mrl">${m.lb}</span><div class="mrb"><div class="mrf" style="width:${pct}%;background:${col}"></div></div><span class="mrv">${m.fmt}</span></div>`;
   });
-  const inner=document.getElementById('modalInner');
-  inner.innerHTML=`<button class="modal-x" onclick="closeModal()">&#10005;</button><div class="m-hdr"><div class="m-flag">${it.f}</div><div class="m-country">${it.co}</div><div class="m-school">${it.fn}</div><div class="m-code">Código da escola: ${it.cd}</div><div class="m-nota-box"><span class="m-nota-label">Nota Geral</span><span class="m-nota-num">${it.nt.toFixed(1).replace('.',',')}</span><div class="m-nota-stars">${starsN(stars)}</div></div></div><div class="m-body"><div class="m-section-title">&#128202; Indicadores</div>${rows}</div><div class="m-footer"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt=""><span>URE Caieiras · Seduc SP · Copa REPLANEJAMENTO</span></div>`;
+  document.getElementById('modalInner').innerHTML=`<button class="mx" onclick="closeModal()">&#10005;</button><div class="mh"><div class="mf">${it.f}</div><div class="mc2">${it.co}</div><div class="ms">${it.fn}</div><div class="mk">Código: ${it.cd}</div><div class="mn"><span class="mnl">Nota Geral</span><span class="mnn">${it.nt.toFixed(1).replace('.',',')}</span><div class="mns">${starsN(stars)}</div></div></div><div class="mb"><div class="mst">Indicadores</div>${rows}</div><div class="mf2"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt=""><span>URE Caieiras · Seduc SP · Copa REPLANEJAMENTO</span></div>`;
   document.getElementById('modal').classList.add('open');
 }
 function closeModal(){document.getElementById('modal').classList.remove('open')}
@@ -497,7 +463,6 @@ function updProg(){
   if(cnt===TOTAL){document.getElementById('banner').classList.add('show');conf(100)}
 }
 
-/* CONFETTI */
 function conf(n){
   const box=document.getElementById('cbox');
   const cols=['#ffec9e','#d32f2f','#4ade80','#60a5fa','#fff','#f472b6','#fbbf24','#a78bfa'];
@@ -511,18 +476,18 @@ function conf(n){
   }
 }
 
-/* REDEEM */
+/* REDEEM — agora busca por campo cd (FIG01..FIG68) */
 function redeem(){
   const inp=document.getElementById('ci'),msg=document.getElementById('cm');
   const raw=inp.value.trim().toUpperCase();
   if(!raw){msg.textContent='';return}
   let match=null;
-  for(const g of G){for(const it of g.items){if(raw===_D(it._c)){match=it;break}}if(match)break}
-  if(!match){inp.classList.remove('gl');inp.classList.add('sh');msg.className='cm e';msg.textContent='Código inválido.';setTimeout(()=>inp.classList.remove('sh'),500);return}
-  if(revealed.has(match.id)){msg.className='cm o';msg.textContent=`Escola #${String(match.id).padStart(2,'0')} já revelada!`;inp.value='';return}
+  for(const g of G){for(const it of g.items){if(raw===it.cd){match=it;break}}if(match)break}
+  if(!match){inp.classList.remove('gl');inp.classList.add('sh');msg.className='cm e';msg.textContent='Código inválido. Tente FIG01 a FIG68.';setTimeout(()=>inp.classList.remove('sh'),500);return}
+  if(revealed.has(match.id)){msg.className='cm o';msg.textContent=`Escola #${String(match.id).padStart(2,'0')} (${match.cd}) já revelada!`;inp.value='';return}
   revealed.add(match.id);save();
   inp.classList.remove('sh');inp.classList.add('gl');
-  msg.className='cm o';msg.textContent=`${match.f} ${match.co} — ${match.fn.substring(0,30)} revelada!`;
+  msg.className='cm o';msg.textContent=`${match.f} ${match.co} — ${match.cd} revelada!`;
   setTimeout(()=>inp.classList.remove('gl'),700);
   const sl=document.getElementById('s-'+match.id);
   sl.classList.add('r','pp2');setTimeout(()=>sl.classList.remove('pp2'),800);
@@ -532,20 +497,13 @@ function redeem(){
   conf(grp.items.every(it=>revealed.has(it.id))?35:12);
 }
 
-/* RESTORE */
-function restore(){
-  revealed.forEach(id=>{
-    const sl=document.getElementById('s-'+id);if(sl)sl.classList.add('r');
-  });
-}
+function restore(){revealed.forEach(id=>{const sl=document.getElementById('s-'+id);if(sl)sl.classList.add('r')})}
 
-/* EVENTS */
-document.getElementById('cb').addEventListener('click',redeem);
+document.getElementById('btnReveal').addEventListener('click',redeem);
 document.getElementById('ci').addEventListener('keydown',e=>{if(e.key==='Enter')redeem()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 window.clearAlbum=function(){localStorage.removeItem(STORAGE_KEY);location.reload()};
 
-/* INIT */
 rNav();rGroups();rCodes();load();restore();updProg();
 </script>
 </body>
